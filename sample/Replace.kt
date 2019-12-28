@@ -1,4 +1,4 @@
-package com.bridgelabs
+package com.bridgelabs.sample
 
 class Replace {
 }
