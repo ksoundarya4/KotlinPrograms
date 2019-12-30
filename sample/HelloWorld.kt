@@ -1,5 +1,3 @@
-package com.bridgelabs.sample
-
 /***************************
  * @purpose To print Hello World message with user name and user age.
  * @file HelloWorld.kt
@@ -8,6 +6,8 @@ package com.bridgelabs.sample
  * @since 28/12/2019
  ***************************
  **************************/
+package com.bridgelabs.sample
+
 /**
  * Function to print Hello World with userName
  * and user age
