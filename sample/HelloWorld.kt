@@ -1,10 +1,9 @@
 package com.bridgelabs.sample
 
-fun main()
-{
-    println("Hello World")
-    sayHelloKotlin()
+fun main() {
+    val userName = "Soundarya"
+    var age = 22
+    println("Hello World. My name is $userName. I am $age years old")
+
 }
-fun sayHelloKotlin(){
-    println("Hello Kotlin")
-}
+
