@@ -1,11 +1,10 @@
-/***************************
+/**
  * @purpose To print Hello World message with user name and user age.
  * @file HelloWorld.kt
  * @author ksoundarya4
  * @version 1.0
  * @since 28/12/2019
- ***************************
- **************************/
+*/
 package com.bridgelabs.sample
 
 /**
