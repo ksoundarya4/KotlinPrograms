@@ -8,8 +8,20 @@
  **********************************/
 package com.bridgelabs.sample
 
+/**
+ * templet value in which <<UserName>> has to be replaced.
+ */
 val templet: String = "Hello <<UserName>> , How are you?"
+/**
+ * Variable that stores user Name.
+ */
 var name = "Soundarya"
+
+/**
+ * main function
+ * <<UserName>> in templet is replaced by user name
+ * prints result to console
+ */
 fun main() {
 
     val result = "${templet.replace("<<UserName>>", name)}"
