@@ -15,7 +15,7 @@ val templet: String = "Hello <<UserName>> , How are you?"
 /**
  * Variable that stores user Name.
  */
-var name = "Soundarya"
+var userName = "Soundarya"
 
 /**
  * main function
@@ -24,7 +24,7 @@ var name = "Soundarya"
  */
 fun main() {
 
-    val result = "${templet.replace("<<UserName>>", name)}"
+    val result = "${templet.replace("<<UserName>>", userName)}"
     println(result)
 }
 
