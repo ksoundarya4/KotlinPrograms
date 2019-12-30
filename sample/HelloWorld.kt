@@ -3,8 +3,8 @@ package com.bridgelabs.sample
 fun main()
 {
     println("Hello World")
-    doSomething()
+    sayHelloKotlin()
 }
-fun doSomething(){
+fun sayHelloKotlin(){
     println("Hello Kotlin")
 }
