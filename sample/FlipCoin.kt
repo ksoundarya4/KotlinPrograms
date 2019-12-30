@@ -1,4 +1,4 @@
-/*
+/**
  * @purpose To Flip Coin and print percentage of Heads and Tails.
  * @file FlipCoin.kt
  * @author ksoundarya4
