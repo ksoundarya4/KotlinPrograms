@@ -11,7 +11,7 @@ package com.bridgelabs.sample
 /**
  * templet value in which <<UserName>> has to be replaced.
  */
-val templet: String = "Hello <<UserName>> , How are you?"
+const val TEMPLET: String = "Hello <<UserName>> , How are you?"
 /**
  * Variable that stores user Name.
  */
@@ -23,8 +23,6 @@ var userName = "Soundarya"
  * prints result to console
  */
 fun main() {
-
-    val result = "${templet.replace("<<UserName>>", userName)}"
-    println(result)
+    println(TEMPLET.replace("<<UserName>>", userName))
 }
 
