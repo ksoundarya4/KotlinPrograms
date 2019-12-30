@@ -1,9 +1,10 @@
 package com.bridgelabs.sample
 
-class HelloWorld {
-}
-
 fun main()
 {
     println("Hello World")
+    doSomething()
+}
+fun doSomething(){
+    println("Hello Kotlin")
 }
