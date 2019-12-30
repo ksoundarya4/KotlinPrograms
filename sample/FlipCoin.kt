@@ -8,6 +8,13 @@
  ***********************/
 package com.bridgelabs.sample
 
+/**
+ * Function to flip a coin trails number of times
+ * and return heads vs tails.
+ *
+ * @param tails : Number of times to flip a coin.
+ * @return heads/tails.
+ */
 fun flipCoin(trails: Int): Double {
     var heads: Int = 0
     var tails: Int = 0
@@ -17,8 +24,15 @@ fun flipCoin(trails: Int): Double {
     }
     return heads.toDouble() / tails
 }
-fun main()
-{
+
+/**
+ * Main function to print
+ * number of heads vs number of tails.
+ *
+ * @param tails : Takes in number of times to flip a coin.
+ * @param headvstail : number of heads / number of tails.
+ */
+fun main() {
     val tails = 100
     val headvstail = flipCoin(tails)
     println("Head v/s Tails are $headvstail")
