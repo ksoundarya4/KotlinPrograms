@@ -1,6 +1,11 @@
 /************************
- * 
- */
+ * @purpose To Flip Coin and print percentage of Heads and Tails.
+ * @file FlipCoin.kt
+ * @author ksoundarya4
+ * @version 1.0
+ * @since 30/12/2019
+ ************************
+ ***********************/
 package com.bridgelabs.sample
 
 fun flipCoin(trails: Int): Double {
