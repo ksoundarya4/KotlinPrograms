@@ -1,11 +1,10 @@
-/***********************************
+/**
  * @purpose To replace "<<UserName>>" with user name and print the result
  * @file Replace.kt
  * @author ksoundarya4
  * @version 1.0
  * @since 28/12/2019
- ***********************************
- **********************************/
+*/
 package com.bridgelabs.sample
 
 /**
