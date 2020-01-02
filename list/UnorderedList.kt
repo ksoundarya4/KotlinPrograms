@@ -1,6 +1,6 @@
-package com.bridgelabs.sample
+package com.bridgelabs.list
 
-data class UnorderedList<T>(var head: Node<T>? = null , var last : Node<T>? = null , var size : Int = 0) {
+ class UnorderedList<T>(var head: Node<T>? = null, var last: Node<T>? = null, var size: Int = 0) {
 
 
     fun add(data: T) {
@@ -8,13 +8,12 @@ data class UnorderedList<T>(var head: Node<T>? = null , var last : Node<T>? = nu
         if (head == null && last == null) {
             head = node
             last = node
-            size++
         }
         if (head != null) {
             last?.next = node
             last = node
-            size++
         }
+        size++
     }
 
     override fun toString(): String {
@@ -31,4 +30,8 @@ data class UnorderedList<T>(var head: Node<T>? = null , var last : Node<T>? = nu
         }
         return "[$string]"
     }
+
+    fun size() = size
+
+
 }
