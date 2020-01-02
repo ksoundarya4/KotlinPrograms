@@ -13,7 +13,11 @@ package com.bridgelabs.list
  *To create UnorderedLinkedList class which has head node ,
  * last Node and LinkedList size
  */
-class UnorderedLinkedList<T>(private var head: Node<T>? = null, private var last: Node<T>? = null, var size: Int = 0) {
+class UnorderedLinkedList<T : Comparable<T>>(
+    private var head: Node<T>? = null,
+    private var last: Node<T>? = null,
+    var size: Int = 0
+) {
 
     /**
      *Function that overrides toString
@@ -62,10 +66,40 @@ class UnorderedLinkedList<T>(private var head: Node<T>? = null, private var last
      *
      * @return true - LinkedList is empty
      */
-    fun isEmpty():Boolean {
-        if(size == 0) return true
+    fun isEmpty(): Boolean {
+        if (size == 0) return true
         return false
     }
 
+    /**
+     * Function to remove an element from LinkedList
+     *
+     * @param data - data to be removed from LinkedList
+     * @return true- if data is present in the LinkedList and remove it
+     */
+    fun remove(data: T): Boolean {
+        if (head == null) {
+            println("LinkedList is empty")
+        }
+        var temp: Node<T>? = head
+        var previousTemp: Node<T>? = null
 
+        if (temp != null && temp.data!!.compareTo(data) == 0) {
+            head = temp.next
+            size--
+            return true
+        }
+
+        while (temp != null && temp.data!!.compareTo(data) != 0) {
+            previousTemp = temp
+            temp = temp.next
+        }
+
+        if (temp == null)
+            return false
+
+        previousTemp!!.next = temp.next
+        size--
+        return true
+    }
 }
