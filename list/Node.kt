@@ -1,4 +1,4 @@
-package com.bridgelabs.sample
+package com.bridgelabs.list
 
 data class Node<T>(
     var data: T? = null,
