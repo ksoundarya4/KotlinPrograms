@@ -78,11 +78,12 @@ class UnorderedLinkedList<T : Comparable<T>>(
      * @return true- if data is present in the LinkedList and remove it
      */
     fun remove(data: T): Boolean {
+        var temp: Node<T>? = head
+        var previousTemp: Node<T>? = null
+
         if (head == null) {
             println("LinkedList is empty")
         }
-        var temp: Node<T>? = head
-        var previousTemp: Node<T>? = null
 
         if (temp != null && temp.data!!.compareTo(data) == 0) {
             head = temp.next
@@ -101,5 +102,63 @@ class UnorderedLinkedList<T : Comparable<T>>(
         previousTemp!!.next = temp.next
         size--
         return true
+    }
+
+
+    fun search(data: T): Boolean {
+        var temp: Node<T>? = head
+
+        if (head == null) {
+            println("LinkedList is empty. Nothing is present to search")
+        }
+        while (temp != null) {
+            if (temp.data!!.compareTo(data) == 0)
+                return true
+            temp = temp.next
+        }
+        return false
+    }
+
+    /**
+     * Function to add new element at position
+     *
+     * @param position - to insert the element into the LinkedList.
+     * @param data - element to be inserted.
+     */
+    fun insert(position: Int, data: T) {
+
+        println("Entering insert method")
+
+        if (position > size || position <= 0) throw OutOfSizeException("Position is out of bound with LinkedList size")
+
+        println("after throw")
+
+        val node: Node<T> = Node(data)
+
+        var count = 1
+        var temp: Node<T>? = head
+        var previousTemp: Node<T>? = null
+
+
+        if (!search(data)) {
+            if (position == 1) {
+                head = node
+                node.next = temp
+            }
+            if (position != 1) {
+                while (count < position) {
+                    previousTemp = temp
+                    temp = temp!!.next
+                    count++
+                }
+                node.next = temp
+                previousTemp!!.next = node
+            }
+            size++
+        }
+        if (search(data)) {
+            println("Element already exists in LinkedList")
+
+        }
     }
 }
