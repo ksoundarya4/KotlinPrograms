@@ -57,5 +57,15 @@ class UnorderedLinkedList<T>(private var head: Node<T>? = null, private var last
      */
     fun size() = size
 
+    /**
+     * Function to check if LinkedList is empty or not
+     *
+     * @return true - LinkedList is empty
+     */
+    fun isEmpty():Boolean {
+        if(size == 0) return true
+        return false
+    }
+
 
 }
