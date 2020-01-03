@@ -66,4 +66,9 @@ data class OrderedLinkedList<T : Comparable<T>>(
         }
         size++
     }
+
+    /**
+     * Function to get the size of LinkedList
+     */
+    fun size() = size
 }
