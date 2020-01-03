@@ -156,4 +156,24 @@ data class OrderedLinkedList<T : Comparable<T>>(
 
     }
 
+    /**
+     * Function that returns index of the item in the Linked List.
+     *
+     * @param data item whose index is returned
+     * @return indexCount of an item.
+     */
+    fun index(data : T) : Int {
+        var temp : Node<T> ?= head
+        var indexCount = 0
+
+        while(temp!=null && temp.data!!.compareTo(data) != 0) {
+            temp = temp.next
+           ++indexCount
+        }
+
+        if(temp == null) throw DataNotFoundException("$data is not found in Linked List")
+
+        return indexCount
+    }
+
 }
