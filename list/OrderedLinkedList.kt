@@ -59,7 +59,7 @@ data class OrderedLinkedList<T : Comparable<T>>(
                 last!!.next = node
                 last = node
             } else {
-                var previousTemp: Node<T>? = temp.next
+                val previousTemp: Node<T>? = temp.next
                 temp.next = node
                 node.next = previousTemp
             }
@@ -114,6 +114,26 @@ data class OrderedLinkedList<T : Comparable<T>>(
         previousTemp!!.next = temp.next
         size--
         return true
+    }
+
+    /**
+     * Function to search an item in LinkedList.
+     *
+     * @param data item to be searched.
+     * @return true if item is present in LinkedList.
+     */
+    fun search(data: T): Boolean {
+        var temp: Node<T>? = head
+
+        if (head == null) {
+            println("LinkedList is empty. Nothing is present to search")
+        }
+        while (temp != null) {
+            if (temp.data!!.compareTo(data) == 0)
+                return true
+            temp = temp.next
+        }
+        return false
     }
 
 }
