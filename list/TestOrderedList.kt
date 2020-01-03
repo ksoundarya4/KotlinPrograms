@@ -13,12 +13,24 @@
 package com.bridgelabs.list
 
 fun main() {
-    var orderedLinkedList: OrderedLinkedList<String> = OrderedLinkedList()
-    orderedLinkedList.add("abhi")
-    orderedLinkedList.add("raghav")
-    orderedLinkedList.add("bhavesh")
-    orderedLinkedList.add("aahana")
-
+    val fileName = "C:\\Users\\soundarya k\\IdeaProjects\\BridgeLabz\\src\\com\\bridgelabs\\list\\NumberFile"
+    val orderedLinkedList = readNumberFile(fileName)
     println(orderedLinkedList)
-    println(orderedLinkedList.index("rupesh"))
+
+    println("Enter a number to be searched")
+
+    val input = readLine()!!.toInt()
+
+    if(orderedLinkedList.search(input)){
+        println("$input found at index ${orderedLinkedList.index(input)}")
+        orderedLinkedList.remove(input)
+        println("List after removing $input : $orderedLinkedList")
+    }
+
+    if(!orderedLinkedList.search(input)) {
+        println("$input is not present in the List")
+        orderedLinkedList.add(input)
+        println("List after adding $input : $orderedLinkedList")
+    }
+
 }
