@@ -19,6 +19,10 @@ data class OrderedLinkedList<T : Comparable<T>>(
     private var size: Int = 0
 ) {
 
+    /**
+     *Function that overrides toString
+     * To print the LinkedList
+     */
     override fun toString(): String {
         var string = ""
         var temp = head
