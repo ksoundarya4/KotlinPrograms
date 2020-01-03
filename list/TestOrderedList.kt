@@ -1,6 +1,10 @@
 /**
  * Data Structure
- * @purpose To test the Ordered LinkedList implementation
+ * @description Read .a List of Numbers from a
+ * file and arrange it ascending Order in a Linked List.
+ * Take user input for a number, if found then
+ * remove the number out of the list else insert
+ * the number in appropriate position
  * @file TestOrderedList.kt
  * @author ksoundarya4
  * @version 1.0
@@ -9,10 +13,12 @@
 package com.bridgelabs.list
 
 fun main() {
-    var orderedLinkedList: OrderedLinkedList<Int> = OrderedLinkedList()
-    orderedLinkedList.add(1)
-    orderedLinkedList.add(3)
-    orderedLinkedList.add(2)
-    orderedLinkedList.add(0)
+    var orderedLinkedList: OrderedLinkedList<String> = OrderedLinkedList()
+    orderedLinkedList.add("abhi")
+    orderedLinkedList.add("raghav")
+    orderedLinkedList.add("bhavesh")
+    orderedLinkedList.add("aahana")
+
     println(orderedLinkedList)
+    println(orderedLinkedList.index("rupesh"))
 }
