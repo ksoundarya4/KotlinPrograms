@@ -45,14 +45,14 @@ data class OrderedLinkedList<T : Comparable<T>>(
         if (head == null && last == null) {
             head = node
             last = node
-        } else if (head!!.data!!.compareTo(data) >= 0) {
+        } else if (head!!.data!! >= data) {
             val temp = head
             head = node
             node.next = temp
         } else {
             var temp: Node<T>? = head
 
-            while (temp!!.next != null && temp.next!!.data!!.compareTo(data) < 0) {
+            while (temp!!.next != null && temp.next!!.data!! < data) {
                 temp = temp.next
             }
             if (temp.next == null) {
