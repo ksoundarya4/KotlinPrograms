@@ -34,6 +34,11 @@ data class OrderedLinkedList<T : Comparable<T>>(
         return "[$string]"
     }
 
+    /**
+     * Function to add items to Ordered LinkedList in ascending order.
+     *
+     * @param data items to be added to LinkedList.
+     */
     fun add(data: T) {
         val node = Node(data)
 
