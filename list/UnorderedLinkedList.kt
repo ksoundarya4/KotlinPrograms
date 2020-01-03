@@ -171,14 +171,14 @@ class UnorderedLinkedList<T : Comparable<T>>(
     fun get(index: Int): T {
         var count = 0
         var temp: Node<T>? = head
-    
-        while(count < index) {
+
+        while (count < index) {
             count++
             temp = temp!!.next
         }
-         return if (temp != null) {
-             temp.data!!
-         } else throw OutOfSizeException(" $index is out of bound with LinkedList size ${size()}")
+        return if (temp != null) {
+            temp.data!!
+        } else throw OutOfSizeException(" $index is out of bound with LinkedList size ${size()}")
 
     }
 }
