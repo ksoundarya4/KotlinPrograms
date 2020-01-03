@@ -33,4 +33,31 @@ data class OrderedLinkedList<T : Comparable<T>>(
         }
         return "[$string]"
     }
+
+    fun add(data: T) {
+        val node = Node(data)
+
+        if (head == null && last == null) {
+            head = node
+            last = node
+        } else if (head!!.data!!.compareTo(data) >= 0) {
+            val temp = head
+            head = node
+            node.next = temp
+        } else {
+            var temp: Node<T>? = head
+
+            while (temp!!.next != null) {
+                temp = temp!!.next
+            }
+            if (temp.next == null) {
+                last!!.next = node
+                last = node
+            }
+            var previousTemp: Node<T>? = temp.next
+            temp.next = node
+            node.next = previousTemp
+            
+        }
+    }
 }
