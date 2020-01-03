@@ -1,12 +1,28 @@
+/**
+ * Data Structures
+ * @purpose To implement queue data structure.
+ * @file Queue.kt
+ * @author ksoundarya4
+ * @version 1.0
+ * @since 03/01/2020
+ */
 package com.bridgelabs.queue
 
 import com.bridgelabs.list.Node
 
+/**
+ * Queue class which has head node,
+ *tail node and queue size.
+ */
 data class Queue<T>(
     private var head: Node<T>? = null,
     private var tail: Node<T>? = null,
     var size: Int = 0
 ) {
+    /**
+     *Function that override toString()
+     * to print elements of Queue
+     */
     override fun toString(): String {
         var string = ""
         var temp = head
@@ -22,6 +38,11 @@ data class Queue<T>(
         return "[$string]"
     }
 
+    /**
+     * Function to add a new item to a queue
+     *
+     * @param data item to be added to a queue
+     */
     fun enequeue(data: T) {
         val newNode = Node<T>(data)
 
@@ -37,6 +58,11 @@ data class Queue<T>(
         size++
     }
 
+    /**
+     * Function to remove front item from queue
+     *
+     * @return item removed from queue
+     */
     fun dequeue(): T {
         if (isEmpty()) throw QueueIsEmptyException(" Queue is Empty ")
 
@@ -46,6 +72,11 @@ data class Queue<T>(
         return oldNode.data!!
     }
 
+    /**
+     * Function to test whether queue is empty
+     *
+     * @return true if queue is empty
+     */
     fun isEmpty(): Boolean {
         if (size == 0) return true
         return false
