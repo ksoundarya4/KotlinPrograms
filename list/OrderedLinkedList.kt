@@ -1,3 +1,12 @@
+/**
+ * DataStructure Program
+ *
+ * @purpose To build Ordered LinkedList without using Collection Library
+ * @file OrderedLinkedList.kt
+ * @author ksoundarya4
+ * @version 1.0
+ * @since 02/01/2020
+ */
 package com.bridgelabs.list
 
 data class OrderedLinkedList<T : Comparable<T>>(
