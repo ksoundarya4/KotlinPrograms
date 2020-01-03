@@ -1,9 +1,1 @@
-/**
-@purpose File to check working of Unordered LinkedList
-@file TestFile.txt
-@author ksoundarya4
-@version 1.0
-@since 03/01/2020
-*/
-
 Hello user Welcome to kotlin
