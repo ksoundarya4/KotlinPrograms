@@ -47,17 +47,17 @@ data class OrderedLinkedList<T : Comparable<T>>(
         } else {
             var temp: Node<T>? = head
 
-            while (temp!!.next != null) {
-                temp = temp!!.next
+            while (temp!!.next != null && temp.next!!.data!!.compareTo(data) < 0) {
+                temp = temp.next
             }
             if (temp.next == null) {
                 last!!.next = node
                 last = node
+            } else {
+                var previousTemp: Node<T>? = temp.next
+                temp.next = node
+                node.next = previousTemp
             }
-            var previousTemp: Node<T>? = temp.next
-            temp.next = node
-            node.next = previousTemp
-            
         }
     }
 }
