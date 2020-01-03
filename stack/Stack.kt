@@ -36,4 +36,15 @@ data class Stack<T : Comparable<T>>(
         size--
         return oldNode.data!!
     }
+
+    fun peek() : T {
+        if (size == 0) throw StackIsEmptyException(" Stack is Empty ")
+        return top!!.data!!
+    }
+
+
+    fun isEmpty() : Boolean {
+        if(size == 0) return true
+        return false
+    }
 }
