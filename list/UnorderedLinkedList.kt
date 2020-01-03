@@ -57,11 +57,6 @@ class UnorderedLinkedList<T : Comparable<T>>(
     }
 
     /**
-     * Function to get the size of LinkedList
-     */
-    fun size() = size
-
-    /**
      * Function to check if LinkedList is empty or not
      *
      * @return true - LinkedList is empty
@@ -179,7 +174,7 @@ class UnorderedLinkedList<T : Comparable<T>>(
         }
         return if (temp != null) {
             temp.data!!
-        } else throw OutOfSizeException(" $index is out of bound with LinkedList size ${size()}")
+        } else throw OutOfSizeException(" $index is out of bound with LinkedList size ${size}")
 
     }
 }
