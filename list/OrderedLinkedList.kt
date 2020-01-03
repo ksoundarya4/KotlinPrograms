@@ -9,6 +9,10 @@
  */
 package com.bridgelabs.list
 
+/**
+ *To create OrderedLinkedList class which has head node ,
+ * last Node and LinkedList size
+ */
 data class OrderedLinkedList<T : Comparable<T>>(
     private var head: Node<T>? = null,
     private var last: Node<T>? = null,
