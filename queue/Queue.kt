@@ -23,7 +23,7 @@ data class Queue<T>(
     }
 
     fun enequeue(data: T) {
-        var newNode = Node<T>(data)
+        val newNode = Node<T>(data)
 
         if (head == null && tail == null) {
             head = newNode
@@ -37,12 +37,17 @@ data class Queue<T>(
         size++
     }
 
-    fun dequeue() : T {
-        if(size == 0) throw QueueIsEmptyException(" Queue is Empty ")
+    fun dequeue(): T {
+        if (isEmpty()) throw QueueIsEmptyException(" Queue is Empty ")
 
         val oldNode = head!!
         head = oldNode.next
         size--
         return oldNode.data!!
+    }
+
+    fun isEmpty(): Boolean {
+        if (size == 0) return true
+        return false
     }
 }
