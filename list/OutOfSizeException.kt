@@ -8,4 +8,4 @@
  */
 package com.bridgelabs.list
 
-class OutOfSizeException(messge: String) : Throwable(messge)
+class OutOfSizeException(message : String) : Throwable(message)
