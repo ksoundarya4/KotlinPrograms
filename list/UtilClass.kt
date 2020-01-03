@@ -11,8 +11,12 @@ package com.bridgelabs.list
 import java.io.File
 import java.io.PrintWriter
 
-object UtilClass
-
+/**
+ * Function to read contents of file
+ *
+ * @param fileName To read the content from.
+ * @return content of file using unorderedLinkedList.
+ */
 fun readFlie(fileName: String): UnorderedLinkedList<String> {
     val file = File(fileName)
     val bufferReader = file.bufferedReader()
@@ -27,10 +31,16 @@ fun readFlie(fileName: String): UnorderedLinkedList<String> {
     return unorderedLinkedList
 }
 
-fun writeFile(unorderedLinkedList: UnorderedLinkedList<String> , fileName: String ){
+/**
+ * Function to write the content into file.
+ *
+ * @param unorderedLinkedList contains elements that should be written to a file.
+ * @param fileName contains path to which content should be written.
+ */
+fun writeFile(unorderedLinkedList: UnorderedLinkedList<String>, fileName: String) {
     var outputString = ""
 
-    for(index in 0.until(unorderedLinkedList.size)) {
+    for (index in 0.until(unorderedLinkedList.size)) {
         outputString += unorderedLinkedList.get(index) + " "
     }
 
