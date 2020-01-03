@@ -64,5 +64,6 @@ data class OrderedLinkedList<T : Comparable<T>>(
                 node.next = previousTemp
             }
         }
+        size++
     }
 }
