@@ -36,4 +36,13 @@ data class Queue<T>(
         }
         size++
     }
+
+    fun dequeue() : T {
+        if(size == 0) throw QueueIsEmptyException(" Queue is Empty ")
+
+        val oldNode = head!!
+        head = oldNode.next
+        size--
+        return oldNode.data!!
+    }
 }
