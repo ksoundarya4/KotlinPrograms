@@ -1,11 +1,25 @@
+/**
+ * Data Structures
+ * @purpose To implement stack using a node.
+ * @file Stack.kt
+ * @author ksoundarya4
+ * @version 1.0
+ * @since 03/01/2020
+ */
 package com.bridgelabs.stack
 
 import com.bridgelabs.list.Node
 
+/**
+ * Stack class which has top node and size
+ */
 data class Stack<T : Comparable<T>>(
     private var top: Node<T>? = null,
     var size: Int = 0
 ) {
+    /**
+     * Function to override toString function
+     */
     override fun toString(): String {
         var str = ""
         var temp: Node<T>? = top
@@ -20,6 +34,11 @@ data class Stack<T : Comparable<T>>(
         return "[$str]"
     }
 
+    /**
+     * Function to add new item to the top of the stack.
+     *
+     * @param data item to be added to stack.
+     */
     fun push(data: T) {
 
         val newNode = Node(data)
@@ -28,6 +47,11 @@ data class Stack<T : Comparable<T>>(
         size++
     }
 
+    /**
+     * Function that removes top item of the stack
+     *
+     * @return Top item of stack
+     */
     fun pop(): T {
         if (size == 0) throw StackIsEmptyException(" Stack is Empty ")
 
@@ -37,14 +61,26 @@ data class Stack<T : Comparable<T>>(
         return oldNode.data!!
     }
 
-    fun peek() : T {
-        if (size == 0) throw StackIsEmptyException(" Stack is Empty ")
+    /**
+     * Function that returns top item of stack
+     * but does not removes it
+     *
+     * @return top item of stack
+     */
+    fun peek(): T {
+        if (this.isEmpty()) {
+            throw StackIsEmptyException(" Stack is Empty ")
+        }
         return top!!.data!!
     }
 
-
-    fun isEmpty() : Boolean {
-        if(size == 0) return true
+    /**
+     * Function to check whether stack is empty or not.
+     *
+     * @return true if stack is empty
+     */
+    fun isEmpty(): Boolean {
+        if (size == 0) return true
         return false
     }
 }
