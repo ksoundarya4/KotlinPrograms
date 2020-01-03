@@ -71,4 +71,14 @@ data class OrderedLinkedList<T : Comparable<T>>(
      * Function to get the size of LinkedList
      */
     fun size() = size
+
+    /**
+     * Function to check if LinkedList is empty or not
+     *
+     * @return true - LinkedList is empty
+     */
+    fun isEmpty(): Boolean {
+        if (size == 0) return true
+        return false
+    }
 }
