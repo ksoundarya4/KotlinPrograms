@@ -104,7 +104,12 @@ class UnorderedLinkedList<T : Comparable<T>>(
         return true
     }
 
-
+    /**
+     * Function to search an item in LinkedList.
+     *
+     * @param data item to be searched.
+     * @return true if item is present in LinkedList.
+     */
     fun search(data: T): Boolean {
         var temp: Node<T>? = head
 
