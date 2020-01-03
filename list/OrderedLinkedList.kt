@@ -81,4 +81,39 @@ data class OrderedLinkedList<T : Comparable<T>>(
         if (size == 0) return true
         return false
     }
+
+
+    /**
+     * Function to remove an element from LinkedList
+     *
+     * @param data - data to be removed from LinkedList
+     * @return true- if data is present in the LinkedList and remove it
+     */
+    fun remove(data: T): Boolean {
+        var temp: Node<T>? = head
+        var previousTemp: Node<T>? = null
+
+        if (head == null) {
+            println("LinkedList is empty")
+        }
+
+        if (temp != null && temp.data!!.compareTo(data) == 0) {
+            head = temp.next
+            size--
+            return true
+        }
+
+        while (temp != null && temp.data!!.compareTo(data) != 0) {
+            previousTemp = temp
+            temp = temp.next
+        }
+
+        if (temp == null)
+            return false
+
+        previousTemp!!.next = temp.next
+        size--
+        return true
+    }
+
 }
