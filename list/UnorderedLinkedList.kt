@@ -161,4 +161,24 @@ class UnorderedLinkedList<T : Comparable<T>>(
 
         }
     }
+
+    /**
+     * Function to return elements present in the given index.
+     *
+     * @param index : Specifies the index of element in the LinkedList.
+     * @return T : element present in that index
+     */
+    fun get(index: Int): T {
+        var count = 0
+        var temp: Node<T>? = head
+    
+        while(count < index) {
+            count++
+            temp = temp!!.next
+        }
+         return if (temp != null) {
+             temp.data!!
+         } else throw OutOfSizeException(" $index is out of bound with LinkedList size ${size()}")
+
+    }
 }
