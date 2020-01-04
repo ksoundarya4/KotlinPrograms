@@ -70,3 +70,18 @@ fun writeFile(unorderedLinkedList: UnorderedLinkedList<String>, fileName: String
     writer.close()
 }
 
+/**
+ * Function to check whether the number is prime or not.
+ *
+ * @param number to be checked.
+ * @return true if number is prime
+ */
+fun isPrime(number : Int) : Boolean {
+    if(number == 0 || number == 1) return false
+    if(number % 2 == 0) return false
+    if(number == 2) return true
+    for(index in 3.until(number/2)){
+        if(number % index == 0) return false
+    }
+    return true
+}
