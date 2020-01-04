@@ -127,21 +127,21 @@ class UnorderedLinkedList<T : Comparable<T>>(
      */
     fun insert(position: Int, data: T) {
 
-        if (position > size || position <= 0) throw OutOfSizeException("Position $position is out of bound with LinkedList size ${size}")
+        if (position > size || position < 0) throw OutOfSizeException("Position $position is out of bound with LinkedList size ${size}")
 
         val node: Node<T> = Node(data)
 
-        var count = 1
+        var count = 0
         var temp: Node<T>? = head
         var previousTemp: Node<T>? = null
 
 
         if (!search(data)) {
-            if (position == 1) {
+            if (position == 0) {
                 head = node
                 node.next = temp
             }
-            if (position != 1) {
+            if (position > 0) {
                 while (count < position) {
                     previousTemp = temp
                     temp = temp!!.next
