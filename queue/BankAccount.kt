@@ -9,7 +9,7 @@
  */
 package com.bridgelabs.queue
 
-data class BankAccount(var cash: Double) {
+data class BankAccount(var cash: Double ?= null) {
 
     /**
      * Function to deposit cash into bank account.
@@ -17,7 +17,7 @@ data class BankAccount(var cash: Double) {
      * @param cash to be added to bank account
      */
     fun cashDeposit(cash: Double) {
-        this.cash += cash
+        this.cash = this.cash?.plus(cash)
     }
 
     /**
@@ -30,10 +30,12 @@ data class BankAccount(var cash: Double) {
             println(" No cash to withdraw ")
         }
 
-        if (cash > this.cash) println(" Low balance ")
+        if (cash > this.cash!!) {
+            println(" Low balance ")
+        }
 
-        if (cash < this.cash) {
-            this.cash -= cash
+        if (cash < this.cash!!) {
+            this.cash = this.cash!!.minus(cash)
         }
     }
 }
