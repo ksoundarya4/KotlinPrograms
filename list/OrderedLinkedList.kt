@@ -16,7 +16,7 @@ package com.bridgelabs.list
 data class OrderedLinkedList<T : Comparable<T>>(
     private var head: Node<T>? = null,
     private var last: Node<T>? = null,
-    private var size: Int = 0
+    var size: Int = 0
 ) {
 
     /**
@@ -161,16 +161,16 @@ data class OrderedLinkedList<T : Comparable<T>>(
      * @param data item whose index is returned
      * @return indexCount of an item.
      */
-    fun index(data : T) : Int {
-        var temp : Node<T> ?= head
+    fun index(data: T): Int {
+        var temp: Node<T>? = head
         var indexCount = 0
 
-        while(temp!=null && temp.data!!.compareTo(data) != 0) {
+        while (temp != null && temp.data!!.compareTo(data) != 0) {
             temp = temp.next
-           ++indexCount
+            ++indexCount
         }
 
-        if(temp == null) throw DataNotFoundException("$data is not found in Linked List")
+        if (temp == null) throw DataNotFoundException("$data is not found in Linked List")
 
         return indexCount
     }
