@@ -76,12 +76,73 @@ fun writeFile(unorderedLinkedList: UnorderedLinkedList<String>, fileName: String
  * @param number to be checked.
  * @return true if number is prime
  */
-fun isPrime(number : Int) : Boolean {
-    if(number == 0 || number == 1) return false
-    if(number % 2 == 0) return false
-    if(number == 2) return true
-    for(index in 3.until(number/2)){
-        if(number % index == 0) return false
+fun isPrime(number: Int): Boolean {
+    if (number == 0 || number == 1) return false
+    if (number % 2 == 0) return false
+    if (number == 2) return true
+    for (index in 3.until(number / 2)) {
+        if (number % index == 0) return false
     }
     return true
+}
+
+/**
+ * Function to check whether two numbers are Anagram
+ *
+ * @param number1 first number
+ * @param number2 second number
+ * @return true if number1 and number2 are anagram.
+ */
+fun isAnagram(number1: Int, number2: Int): Boolean {
+    val firstNumber = number1.toString().toCharArray()
+    val secondNumber = number2.toString().toCharArray()
+
+    if (firstNumber.size != secondNumber.size) return false
+
+    firstNumber.sort()
+    secondNumber.sort()
+
+    for (index in 0.until(firstNumber.size)) {
+        if (firstNumber[index] != secondNumber[index])
+            return false
+    }
+    return true
+}
+
+/**
+ * Function to Find prime numbers that are anagram in the range 0 to 1000
+ *
+ * @return ordered linked list of prime numbers that are anagram
+ */
+fun primeAnagram(): OrderedLinkedList<Int> {
+
+    val primeList = UnorderedLinkedList<Int>()
+
+    val primeAnagramList1 = UnorderedLinkedList<Int>()
+    val primeAnagramList2 = UnorderedLinkedList<Int>()
+
+    val finalPrimeAnagram = OrderedLinkedList<Int>()
+
+    for (index in 0..1000) {
+        if (isPrime(index)) {
+            primeList.add(index)
+        }
+    }
+
+    for (firstIndex in 0.until(primeList.size)) {
+        for (secondIndex in firstIndex.plus(1).until(primeList.size)) {
+            if (isAnagram(primeList.get(firstIndex), primeList.get(secondIndex))) {
+                primeAnagramList1.add(primeList.get(firstIndex))
+                primeAnagramList2.add(primeList.get(secondIndex))
+            }
+        }
+    }
+    for (index in 1.until(primeAnagramList1.size)) {
+        primeAnagramList1.insert(index, primeAnagramList2.get(index))
+    }
+    for (index in 0.until(primeAnagramList1.size)) {
+        finalPrimeAnagram.add(primeAnagramList1.get(index))
+
+    }
+    return finalPrimeAnagram
 }
