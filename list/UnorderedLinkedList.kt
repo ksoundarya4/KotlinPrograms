@@ -152,11 +152,9 @@ class UnorderedLinkedList<T : Comparable<T>>(
             }
             size++
         }
-        if (search(data)) {
-            println("Element already exists in LinkedList")
 
-        }
     }
+    
 
     /**
      * Function to return elements present in the given index.
