@@ -44,15 +44,15 @@ data class OrderedLinkedList<T : Comparable<T>>(
      * @param data items to be added to LinkedList.
      */
     fun add(data: T) {
-        val node = Node(data)
+        val newNode = Node(data)
 
         if (head == null && last == null) {
-            head = node
-            last = node
+            head = newNode
+            last = newNode
         } else if (head!!.data!! >= data) {
             val temp = head
-            head = node
-            node.next = temp
+            head = newNode
+            newNode.next = temp
         } else {
             var temp: Node<T>? = head
 
@@ -60,12 +60,12 @@ data class OrderedLinkedList<T : Comparable<T>>(
                 temp = temp.next
             }
             if (temp.next == null) {
-                last!!.next = node
-                last = node
+                last!!.next = newNode
+                last = newNode
             } else {
-                val previousTemp: Node<T>? = temp.next
-                temp.next = node
-                node.next = previousTemp
+                val nextTemp: Node<T>? = temp.next
+                temp.next = newNode
+                newNode.next = nextTemp
             }
         }
         size++
