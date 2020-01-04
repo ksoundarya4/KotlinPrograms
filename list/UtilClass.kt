@@ -137,7 +137,10 @@ fun primeAnagram(): OrderedLinkedList<Int> {
             }
         }
     }
-    for (index in 1.until(primeAnagramList1.size)) {
+    println(primeAnagramList1)
+    println(primeAnagramList2)
+
+    for (index in 0.until(primeAnagramList1.size)) {
         primeAnagramList1.insert(index, primeAnagramList2.get(index))
     }
     for (index in 0.until(primeAnagramList1.size)) {
