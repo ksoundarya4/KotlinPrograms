@@ -154,7 +154,7 @@ class UnorderedLinkedList<T : Comparable<T>>(
         }
 
     }
-    
+
 
     /**
      * Function to return elements present in the given index.
