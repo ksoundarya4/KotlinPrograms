@@ -72,11 +72,19 @@ class Deque<T>(
     fun removeFront(): T {
 
         if(isEmpty()) throw QueueIsEmptyException(" Queue is Empty ")
-        
-        val oldNode = front
-        front = oldNode!!.next
-        size--
-        return oldNode.data!!
+
+        if(size == 1){
+            val oldNode = front
+            front = null
+            rear = null
+            size--
+            return oldNode?.data!!
+        } else {
+            val oldNode = front
+            front = oldNode!!.next
+            size--
+            return oldNode.data!!
+        }
     }
 
     /**
@@ -95,12 +103,19 @@ class Deque<T>(
             previousTemp = temp
             temp = temp.next
         }
+        if(previousTemp == null) {
+            rear = null
+            front = rear
+            size--
+            return temp.data!!
+        } else {
+            val oldNode = temp
+            rear = previousTemp
+            previousTemp.next = null
+            size--
+            return oldNode.data!!
+        }
 
-        var oldNode = temp
-        rear = previousTemp
-        previousTemp!!.next = null
-        size--
-        return oldNode.data!!
     }
 
     /**
