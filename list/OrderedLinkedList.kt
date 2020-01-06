@@ -92,7 +92,7 @@ data class OrderedLinkedList<T : Comparable<T>>(
         var temp: Node<T>? = head
         var previousTemp: Node<T>? = null
 
-        if (head == null) {
+        if (isEmpty()) {
             println("LinkedList is empty")
         }
 
@@ -124,7 +124,7 @@ data class OrderedLinkedList<T : Comparable<T>>(
     fun search(data: T): Boolean {
         var temp: Node<T>? = head
 
-        if (head == null) {
+        if (isEmpty()) {
             println("LinkedList is empty. Nothing is present to search")
         }
         while (temp != null) {
