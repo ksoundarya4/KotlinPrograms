@@ -162,3 +162,32 @@ fun primeNumbersOf(number1: Int = 0, number2: Int = 1000): UnorderedLinkedList<I
     return primeList
 }
 
+/**
+ * Function to count number of digits in a number.
+ *
+ * @param number to count number of digits.
+ * @return number of digits in number.
+ */
+fun countDigitsOf(number: Int): Int {
+    var number1 = number
+    var countDigit = 0
+    while (number1 > 0) {
+        number1 /= 10
+        countDigit++
+    }
+    return countDigit
+}
+
+/**
+ * Function to check whether year is Leap year or not.
+ *
+ * @param year
+ * @return true if year is leap year.
+ */
+fun isLeapYear(year: Int): Boolean {
+    if (countDigitsOf(year) == 4) {
+        if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0))
+            return true
+    }
+    return false
+}
