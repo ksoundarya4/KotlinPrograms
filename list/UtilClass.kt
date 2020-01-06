@@ -149,3 +149,18 @@ fun primeAnagram(): OrderedLinkedList<Int> {
     }
     return finalPrimeAnagram
 }
+
+/**
+ * Function to obtain prime numbers from 0 to 1000
+ *
+ * @return primeList of prime numbers from 0 to 1000
+ */
+fun primeNumbersOf(number1: Int = 0, number2: Int = 1000) : UnorderedLinkedList<Int>{
+
+    val primeList = UnorderedLinkedList<Int>()
+    for(index in number1..number2){
+        if(isPrime(index)) primeList.add(index)
+    }
+    return primeList
+}
+
