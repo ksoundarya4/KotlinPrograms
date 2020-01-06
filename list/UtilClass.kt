@@ -171,7 +171,7 @@ fun primeNumbersOf(number1: Int = 0, number2: Int = 1000): UnorderedLinkedList<I
 fun countDigitsOf(number: Int): Int {
     var number1 = number
     var countDigit = 0
-    while (number1 > 0) {
+    while (number > 0) {
         number1 /= 10
         countDigit++
     }
@@ -190,4 +190,20 @@ fun isLeapYear(year: Int): Boolean {
             return true
     }
     return false
+}
+
+/**
+ * * To find the day of the week that date falls on.
+ *
+ * @param{int}year -Input year
+ * @param{int}month -Input month
+ * @param{int}date - Input date
+ * @return{int} 0 for Sunday, 1 for Monday, 2 for Tuesday, and so forth.
+ */
+fun day(date: Int, month: Int, year: Int): Int {
+    var year: Int = year - (14 - month) / 12
+    val x: Int = year + year / 4 - year / 100 + year / 400
+    val month = month + 12 * ((14 - month) / 12) - 2
+
+    return (date + x + 31 * month / 12) % 7
 }
