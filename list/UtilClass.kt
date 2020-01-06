@@ -137,8 +137,6 @@ fun primeAnagram(): OrderedLinkedList<Int> {
             }
         }
     }
-    println(primeAnagramList1)
-    println(primeAnagramList2)
 
     for (index in 0.until(primeAnagramList1.size)) {
         primeAnagramList1.insert(index, primeAnagramList2.get(index))
@@ -155,11 +153,11 @@ fun primeAnagram(): OrderedLinkedList<Int> {
  *
  * @return primeList of prime numbers from 0 to 1000
  */
-fun primeNumbersOf(number1: Int = 0, number2: Int = 1000) : UnorderedLinkedList<Int>{
+fun primeNumbersOf(number1: Int = 0, number2: Int = 1000): UnorderedLinkedList<Int> {
 
     val primeList = UnorderedLinkedList<Int>()
-    for(index in number1..number2){
-        if(isPrime(index)) primeList.add(index)
+    for (index in number1..number2) {
+        if (isPrime(index)) primeList.add(index)
     }
     return primeList
 }
