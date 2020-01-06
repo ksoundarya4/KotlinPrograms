@@ -1,3 +1,22 @@
+/**
+ * Data Structures
+ * @description Calendar function that takes the month and year as argument
+ * and prints the Calendar of the month.
+ *
+ *   July 2005
+ *   S  M  T  W Th  F  S
+ *                  1  2
+ *   3  4  5  6  7  8  9
+ *  10 11 12 13 14 15 16
+ *  17 18 19 20 21 22 23
+ *  24 25 26 27 28 29 30
+ *  31
+ *
+ *  @file Calender.kt
+ *  @author ksoundarya4
+ *  @version 1.0
+ *  @since 06/01/2020
+ */
 package com.bridgelabs.calender
 
 import com.bridgelabs.list.countDigitsOf
@@ -25,7 +44,7 @@ fun calender(month: Int, year: Int) {
 
     for(index in 0.until(day))
         print("    ")
-    
+
     for(index in 1..days[month]){
         if(countDigitsOf(index) == 1)
         print(" $index  ")
