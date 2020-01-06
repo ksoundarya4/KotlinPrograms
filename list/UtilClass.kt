@@ -171,7 +171,7 @@ fun primeNumbersOf(number1: Int = 0, number2: Int = 1000): UnorderedLinkedList<I
 fun countDigitsOf(number: Int): Int {
     var number1 = number
     var countDigit = 0
-    while (number > 0) {
+    while (number1 > 0) {
         number1 /= 10
         countDigit++
     }
