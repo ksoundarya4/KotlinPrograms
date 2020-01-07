@@ -44,7 +44,7 @@ data class Queue<T>(
      * @param data item to be added to a queue
      */
     fun enequeue(data: T) {
-        val newNode = Node<T>(data)
+        val newNode = Node(data)
 
         if (head == null && tail == null) {
             head = newNode
