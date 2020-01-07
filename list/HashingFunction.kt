@@ -17,7 +17,7 @@
  */
 package com.bridgelabs.list
 
-class HashingFunction() {
+class HashingFunction {
     /**
      * Array of type ordered Linked list of size 11
      */
