@@ -17,19 +17,19 @@ import com.bridgelabs.list.isPrime
 fun main() {
     val row = 10
     val coloum = 100
-    val twoD_PrimeArray = Array(row) { IntArray(coloum) }
+    val twoDPrimeArray = Array(row) { IntArray(coloum) }
 
     /**
      * For Each loop To store Prime Number in 2D Array
-     * @param outterArray points the outer index of 2D array
-     * @param innerArray points the inner index of 2D array
+     *outerArray points the outer index of 2D array
+     *innerArray points the inner index of 2D array
      */
-    for (outterArray in 0.until(row)) {
-        val col = coloum * outterArray
+    for (outerArray in 0.until(row)) {
+        val col = coloum * outerArray
         var innerCount = 0
         for (innerArray in col.until(col.plus(99))) {
             if (isPrime(innerArray)) {
-                twoD_PrimeArray[outterArray][innerCount] = innerArray
+                twoDPrimeArray[outerArray][innerCount] = innerArray
                 innerCount++
             }
         }
@@ -40,8 +40,8 @@ fun main() {
      */
     for (outerArray in 0.until(row)) {
         for (innerArray in 0.until(100)) {
-            if (twoD_PrimeArray[outerArray][innerArray] != 0) {
-                print(" ${twoD_PrimeArray[outerArray][innerArray]} ")
+            if (twoDPrimeArray[outerArray][innerArray] != 0) {
+                print(" ${twoDPrimeArray[outerArray][innerArray]} ")
             }
         }
         println()
