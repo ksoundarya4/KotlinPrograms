@@ -23,7 +23,7 @@ import com.bridgelabs.list.countDigitsOf
 import com.bridgelabs.list.day
 import com.bridgelabs.list.isLeapYear
 
-fun calender(month: Int, year: Int) {
+fun calenderOf(month: Int, year: Int) {
     val months = arrayOf(
         "",
         "January", "Febrauary", "March",
@@ -60,5 +60,5 @@ fun main(){
     val month = readLine()!!.toInt()
     println("Enter a year")
     val year = readLine()!!.toInt()
-    calender(month,year)
+    calenderOf(month,year)
 }
