@@ -1,7 +1,7 @@
 /**
  * Object Oriented Programs
- * @description Creating a data class Name
- * that has firsName and lastName.
+ * @description Name class containing firsName
+ * and lastName.
  * @file Name.kt
  * @author ksoundarya4
  * @version 1.0
@@ -28,7 +28,7 @@ data class Name(
      * Function that overrides toString()
      */
     override fun toString(): String {
-        return "$firstName $lastName"
+        return "Name : $firstName $lastName"
     }
 
     /**
