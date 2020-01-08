@@ -1,6 +1,6 @@
 package com.bridgelabs.deque
 
-import com.bridgelabs.list.Node
+import com.bridgelabs.util.Node
 import com.bridgelabs.queue.QueueIsEmptyException
 
 class Deque<T>(
