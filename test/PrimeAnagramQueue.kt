@@ -7,8 +7,9 @@
  * @version 1.0
  * @since 04/01/2020
  */
-package com.bridgelabs.queue
+package com.bridgelabs.test
 
+import com.bridgelabs.queue.Queue
 import com.bridgelabs.util.OrderedLinkedList
 import com.bridgelabs.util.primeAnagram
 
