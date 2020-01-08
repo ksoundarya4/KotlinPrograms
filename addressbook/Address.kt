@@ -17,6 +17,9 @@ data class Address(
     val state: String? = null,
     val zip: String? = null
 ) {
+    /**
+     * Function that overrides equals() function.
+     */
     override fun equals(other: Any?): Boolean {
         if (other is Address) {
             if (other.houseNumber.equals(this.houseNumber) &&
@@ -31,10 +34,16 @@ data class Address(
         return false
     }
 
+    /**
+     * Function that overrides toString() function.
+     */
     override fun toString(): String {
         return "Address : $houseNumber,$street,$locality,$city,$state,$zip"
     }
 
+    /**
+     * Function that overrides hashCode() function.
+     */
     override fun hashCode(): Int {
         return { houseNumber + street + locality + city + state + zip }.hashCode()
     }
