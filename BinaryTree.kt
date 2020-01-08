@@ -50,13 +50,3 @@ class BinaryTree<T : Comparable<T>> {
 
 }
 
-
-fun main() {
-    val tree = BinaryTree<Int>()
-    val root = BinaryTree.Node(5)
-    println(tree.traverseInOrder(root))
-    tree.insert(root, 6)
-    tree.insert(root, 2)
-    tree.insert(root, 7)
-    println(tree.traverseInOrder(root))
-}
