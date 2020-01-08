@@ -10,12 +10,12 @@
 package com.bridgelabs.addressbook
 
 data class Address(
-    val houseNumber: String? = null,
-    val street: String? = null,
-    val locality: String? = null,
-    val city: String? = null,
-    val state: String? = null,
-    val zip: String? = null
+    var houseNumber: String? = null,
+    var street: String? = null,
+    var locality: String? = null,
+    var city: String? = null,
+    var state: String? = null,
+    var zip: String? = null
 ) {
     /**
      * Function that overrides equals() function.
