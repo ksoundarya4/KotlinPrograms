@@ -10,7 +10,7 @@
  * @version 1.0
  * @since 03/01/2020
  */
-package com.bridgelabs.list
+package com.bridgelabs.util
 
 fun main() {
     val fileName = "C:\\Users\\soundarya k\\IdeaProjects\\BridgeLabz\\src\\com\\bridgelabs\\list\\NumberFile"
