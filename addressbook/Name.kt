@@ -10,8 +10,8 @@
 package com.bridgelabs.addressbook
 
 data class Name(
-    var firstName: String? = null,
-    var lastName: String? = null
+    var firstName: String,
+    var lastName: String
 ) {
     /**
      * Function that overrides equals()
@@ -30,7 +30,7 @@ data class Name(
      * Function that overrides toString()
      */
     override fun toString(): String {
-        return "Name : $firstName $lastName"
+        return "$firstName $lastName"
     }
 
     /**
