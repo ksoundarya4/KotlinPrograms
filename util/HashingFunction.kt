@@ -76,34 +76,8 @@ class HashingFunction {
             hashList[number % 11]!!.remove(number)
         }
     }
-
-
 }
 
-fun main() {
-    val hashingFunction = HashingFunction()
-
-    val fileName = "C:\\Users\\soundarya k\\IdeaProjects\\BridgeLabz\\src\\com\\bridgelabs\\list\\NumberFile"
-    val list = readNumberFile(fileName)
-
-    hashingFunction.hashingFunction()
-
-    for (index in 0.until(list.size)) {
-        hashingFunction.put(list.get(index))
-    }
-    println(hashingFunction)
-
-    println("Enter a number to be searched")
-    val input = readLine()!!.toInt()
-    if (hashingFunction.search(input)) {
-        hashingFunction.pop(input)
-    } else {
-        hashingFunction.put(input)
-    }
-
-    println(hashingFunction)
-
-}
 
 
 
