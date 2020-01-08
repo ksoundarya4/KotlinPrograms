@@ -7,7 +7,7 @@
  * @version 1.0
  * @since 02/01/2020
  */
-package com.bridgelabs.list
+package com.bridgelabs.util
 
 /**
  *To create UnorderedLinkedList class which has head node ,
