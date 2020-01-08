@@ -15,7 +15,7 @@ import com.bridgelabs.util.writeFile
 
 fun main() {
 
-    val fileName = """C:\Users\soundarya k\IdeaProjects\BridgeLabz\src\com\bridgelabs\list\TestFile.txt"""
+    val fileName = """C:\Users\soundarya k\IdeaProjects\BridgeLabz\src\com\bridgelabs\util\TestFile.txt"""
 
     val unorderedLinkedList = readFlie(fileName)
     println(unorderedLinkedList)
@@ -32,7 +32,7 @@ fun main() {
     }
     println(unorderedLinkedList)
 
-    val outputFile = "C:\\Users\\soundarya k\\IdeaProjects\\BridgeLabz\\src\\com\\bridgelabs\\list\\OutputFile.txt"
+    val outputFile = "C:\\Users\\soundarya k\\IdeaProjects\\BridgeLabz\\src\\com\\bridgelabs\\util\\OutputFile.txt"
     writeFile(unorderedLinkedList, outputFile)
 
 }
