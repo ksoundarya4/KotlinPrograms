@@ -1,4 +1,14 @@
-package com.bridgelabs.deque
+/**
+ *Data Structure
+ * @purpose To check a string is palindrome or not using deque
+ * @file PalindromeChecker.kt
+ * @author ksoundarya4
+ * @version 1.0
+ * @since 08/01/2020
+ */
+package com.bridgelabs.test
+
+import com.bridgelabs.deque.Deque
 
 fun main() {
     println("Enter a word to check whether it is palindrome or not")
