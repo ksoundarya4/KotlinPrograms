@@ -9,16 +9,16 @@
  */
 package com.bridgelabs.queue
 
-import com.bridgelabs.list.OrderedLinkedList
-import com.bridgelabs.list.primeAnagram
+import com.bridgelabs.util.OrderedLinkedList
+import com.bridgelabs.util.primeAnagram
 
 fun main() {
-    val primeAnagramList : OrderedLinkedList<Int> = primeAnagram()
+    val primeAnagramList: OrderedLinkedList<Int> = primeAnagram()
     val queue = Queue<Int>()
 
-    for(index in 0.until(primeAnagramList.size)) {
+    for (index in 0.until(primeAnagramList.size)) {
         queue.enequeue(primeAnagramList.get(index))
     }
-    for(index in 0.until(queue.size))
+    for (index in 0.until(queue.size))
         println(queue.dequeue())
 }
