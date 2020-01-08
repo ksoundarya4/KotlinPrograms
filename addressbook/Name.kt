@@ -10,8 +10,8 @@
 package com.bridgelabs.addressbook
 
 data class Name(
-    val firstName: String? = null,
-    val lastName: String? = null
+    var firstName: String? = null,
+    var lastName: String? = null
 ) {
     /**
      * Function that overrides equals()
