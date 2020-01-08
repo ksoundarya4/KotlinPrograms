@@ -15,7 +15,7 @@ package com.bridgelabs.test
 import com.bridgelabs.util.readNumberFile
 
 fun main() {
-    val fileName = "C:\\Users\\soundarya k\\IdeaProjects\\BridgeLabz\\src\\com\\bridgelabs\\list\\NumberFile"
+    val fileName = "C:\\Users\\soundarya k\\IdeaProjects\\BridgeLabz\\src\\com\\bridgelabs\\util\\NumberFile"
     val orderedLinkedList = readNumberFile(fileName)
     println(orderedLinkedList)
 
@@ -27,9 +27,7 @@ fun main() {
         println("$input found at index ${orderedLinkedList.index(input)}")
         orderedLinkedList.remove(input)
         println("List after removing $input : $orderedLinkedList")
-    }
-
-    if(!orderedLinkedList.search(input)) {
+    }else if(!orderedLinkedList.search(input)) {
         println("$input is not present in the List")
         orderedLinkedList.add(input)
         println("List after adding $input : $orderedLinkedList")
