@@ -9,8 +9,8 @@
  */
 package com.bridgelabs.stack
 
-import com.bridgelabs.list.OrderedLinkedList
-import com.bridgelabs.list.primeAnagram
+import com.bridgelabs.util.OrderedLinkedList
+import com.bridgelabs.util.primeAnagram
 
 fun main() {
     val primeAnagramList: OrderedLinkedList<Int> = primeAnagram()
