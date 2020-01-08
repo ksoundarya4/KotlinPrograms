@@ -7,8 +7,9 @@
  * @version 1.0
  * @since 04/01/2020
  */
-package com.bridgelabs.stack
+package com.bridgelabs.test
 
+import com.bridgelabs.stack.Stack
 import com.bridgelabs.util.OrderedLinkedList
 import com.bridgelabs.util.primeAnagram
 
