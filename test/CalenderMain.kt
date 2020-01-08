@@ -6,7 +6,10 @@
  * @version 1.0
  * @since 07/01/2020
  */
-package com.bridgelabs.calender
+package com.bridgelabs.test
+
+import com.bridgelabs.calender.Calender
+
 fun main(){
     println("Enter a month")
     val month = readLine()!!.toInt()
