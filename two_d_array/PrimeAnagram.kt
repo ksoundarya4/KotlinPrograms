@@ -2,8 +2,8 @@
 
 package com.bridgelabs.two_d_array
 
-import com.bridgelabs.list.primeAnagram
-import com.bridgelabs.list.primeNumbersOf
+import com.bridgelabs.util.primeAnagram
+import com.bridgelabs.util.primeNumbersOf
 
 fun main() {
     val primeList = primeNumbersOf()
