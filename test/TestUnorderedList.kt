@@ -8,7 +8,10 @@
  * @version 1.0
  * @since 02/01/2020
  */
-package com.bridgelabs.util
+package com.bridgelabs.test
+
+import com.bridgelabs.util.readFlie
+import com.bridgelabs.util.writeFile
 
 fun main() {
 
