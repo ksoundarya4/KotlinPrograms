@@ -18,7 +18,9 @@ data class Name(
      */
     override fun equals(other: Any?): Boolean {
         if (other is Name) {
-            if (other.firstName == this.firstName && other.lastName == this.lastName)
+            if (other.firstName.equals(this.firstName) &&
+                other.lastName.equals(this.lastName)
+            )
                 return true
         }
         return false
