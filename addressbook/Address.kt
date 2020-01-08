@@ -1,3 +1,12 @@
+/**
+ * Object Oriented Programs
+ * @description Address class containing
+ * house number,street,locality,city,state and zip.
+ * @file Address.kt
+ * @author ksoundarya4
+ * @version 1.0
+ * @since 08/01/2020
+ */
 package com.bridgelabs.addressbook
 
 data class Address(
