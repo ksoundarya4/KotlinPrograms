@@ -11,7 +11,9 @@
  * @version 1.0
  * @since 03/01/2020
  */
-package com.bridgelabs.stack
+package com.bridgelabs.test
+
+import com.bridgelabs.stack.Stack
 
 fun main() {
     println("Enter an Arithmetic Expression to ensure it is balanced or not")
