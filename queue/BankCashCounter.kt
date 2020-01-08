@@ -92,12 +92,3 @@ class BankCashCounter(var cashBalance: Int = 100000) {
     }
 }
 
-fun main() {
-
-    val cashCounter = BankCashCounter()
-
-    println("Enter number of people to be added to queue")
-    val peopleCount = readLine()!!.toInt()
-    cashCounter.addPeopleToQueue(peopleCount)
-    cashCounter.perform(peopleCount)
-}
