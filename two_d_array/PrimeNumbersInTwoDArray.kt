@@ -12,7 +12,7 @@
  */
 package com.bridgelabs.two_d_array
 
-import com.bridgelabs.list.isPrime
+import com.bridgelabs.util.isPrime
 
 fun main() {
     val row = 10
