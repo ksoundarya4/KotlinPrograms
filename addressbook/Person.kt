@@ -10,9 +10,9 @@
 package com.bridgelabs.addressbook
 
 data class Person(
-    var name: Name? = null,
-    var address: Address? = null,
-    var phoneNumber: String? = null
+    var name: Name,
+    var address: Address,
+    var phoneNumber: String
 ) {
 
     /**
@@ -20,9 +20,9 @@ data class Person(
      */
     override fun equals(other: Any?): Boolean {
         if (other is Person) {
-            if (other.name!!.equals(this.name) &&
-                other.address!!.equals(this.address) &&
-                other.phoneNumber.equals(this.phoneNumber)
+            if (other.name == this.name &&
+                other.address == this.address &&
+                other.phoneNumber == this.phoneNumber
             )
                 return true
         }
@@ -33,14 +33,14 @@ data class Person(
      *Function that overrides toString() function
      */
     override fun toString(): String {
-        return "Name : $name \n Address : $address \n PhoneNumber : $phoneNumber"
+        return "Name : $name \nAddress : $address \nPhoneNumber : $phoneNumber"
     }
 
     /**
      *Function that overrides hashCode() function
      */
     override fun hashCode(): Int {
-        return {name.hashCode()+address.hashCode()+phoneNumber.hashCode()}.hashCode()
+        return { name.hashCode() + address.hashCode() + phoneNumber.hashCode() }.hashCode()
     }
 }
 
