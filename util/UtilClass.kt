@@ -6,7 +6,7 @@
  * @version 1.0
  * @since 03/01/2020
  */
-package com.bridgelabs.list
+package com.bridgelabs.util
 
 import java.io.File
 import java.io.PrintWriter
