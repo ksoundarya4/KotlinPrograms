@@ -10,12 +10,12 @@
 package com.bridgelabs.addressbook
 
 data class Address(
-    var houseNumber: String? = null,
-    var street: String? = null,
-    var locality: String? = null,
-    var city: String? = null,
-    var state: String? = null,
-    var zip: String? = null
+    var houseNumber: String,
+    var street: String,
+    var locality: String,
+    var city: String,
+    var state: String,
+    var zip: String
 ) {
     /**
      * Function that overrides equals() function.
@@ -38,7 +38,7 @@ data class Address(
      * Function that overrides toString() function.
      */
     override fun toString(): String {
-        return "Address : $houseNumber,$street,$locality,$city,$state,$zip"
+        return "$houseNumber,$street,$locality,$city,$state,$zip"
     }
 
     /**
