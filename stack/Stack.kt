@@ -8,7 +8,7 @@
  */
 package com.bridgelabs.stack
 
-import com.bridgelabs.list.Node
+import com.bridgelabs.util.Node
 
 /**
  * Stack class which has top node and size
