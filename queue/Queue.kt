@@ -8,7 +8,7 @@
  */
 package com.bridgelabs.queue
 
-import com.bridgelabs.list.Node
+import com.bridgelabs.util.Node
 
 /**
  * Queue class which has head node,
