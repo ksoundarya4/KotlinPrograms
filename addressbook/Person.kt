@@ -10,9 +10,9 @@
 package com.bridgelabs.addressbook
 
 data class Person(
-    var name: Name,
-    var address: Address,
-    var phoneNumber: String
+    var name: Name ?= null,
+    var address: Address ?= null,
+    var phoneNumber: String ?= null
 ) {
 
     /**
@@ -42,6 +42,5 @@ data class Person(
     override fun hashCode(): Int {
         return { name.hashCode() + address.hashCode() + phoneNumber.hashCode() }.hashCode()
     }
+
 }
-
-
