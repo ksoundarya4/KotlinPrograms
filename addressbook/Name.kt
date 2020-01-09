@@ -13,6 +13,7 @@ data class Name(
     var firstName: String,
     var lastName: String
 ) {
+
     /**
      * Function that overrides equals()
      */
@@ -37,6 +38,7 @@ data class Name(
      * Function that overrides hashCode()
      */
     override fun hashCode(): Int {
-        return { firstName + lastName }.hashCode()
+        return { this.firstName.hashCode() + this.lastName.hashCode() }.hashCode()
     }
+
 }
