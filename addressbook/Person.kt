@@ -10,9 +10,9 @@
 package com.bridgelabs.addressbook
 
 data class Person(
-    var name: Name ?= null,
-    var address: Address ?= null,
-    var phoneNumber: String ?= null
+    var name: Name,
+    var address: Address,
+    var phoneNumber: String
 ) {
 
     /**
