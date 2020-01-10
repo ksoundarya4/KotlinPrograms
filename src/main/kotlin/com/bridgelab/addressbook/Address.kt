@@ -22,12 +22,12 @@ data class Address(
      */
     override fun equals(other: Any?): Boolean {
         if (other is Address) {
-            if (other.houseNumber.equals(this.houseNumber) &&
-                other.street.equals(this.street) &&
-                other.locality.equals(this.locality) &&
-                other.city.equals(this.city) &&
-                other.state.equals(this.state) &&
-                other.zip.equals(this.zip)
+            if (other.houseNumber == this.houseNumber &&
+                    other.street == this.street &&
+                    other.locality == this.locality &&
+                    other.city == this.city &&
+                    other.state == this.state &&
+                    other.zip == this.zip
             )
                 return true
         }
