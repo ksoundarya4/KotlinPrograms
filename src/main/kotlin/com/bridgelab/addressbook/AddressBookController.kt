@@ -1,6 +1,6 @@
 /**
  * Object Oriented Programs
- * @purpose To create Address Book Controllerclass
+ * @purpose To create Address Book Controller class
  * @file AddressBookController.kt
  * @author ksoundarya4
  * @version 1.0
