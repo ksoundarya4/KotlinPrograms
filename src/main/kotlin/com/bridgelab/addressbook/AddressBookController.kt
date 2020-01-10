@@ -1,10 +1,21 @@
+/**
+ * Object Oriented Programs
+ * @purpose To create Address Book Application class
+ * @file AddressBookApplication.kt
+ * @author ksoundarya4
+ * @version 1.0
+ * @since 10/01/2020
+ */
 package com.bridgelab.addressbook
 
-class AddressBookApplication {
+class AddressBookController {
 
     val fileSystem = FileSystem()
     var addressBook = AddressBook()
 
+    /**
+     * Function to controller Address Book
+     */
     fun addressBookController() {
 
         println("Enter the following choice to perform")
@@ -78,7 +89,3 @@ class AddressBookApplication {
     }
 }
 
-fun main() {
-    val addressBookApplication = AddressBookApplication()
-    addressBookApplication.addressBookController()
-}
