@@ -9,7 +9,7 @@
  */
 package com.bridgelab.addressbook
 
-data class Person(
+data class Person(var id : Int,
     var name: Name,
     var address: Address,
     var phoneNumber: String
