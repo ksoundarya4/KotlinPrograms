@@ -9,10 +9,10 @@
  */
 package com.bridgelab.clinicManagement
 
-import java.util.*
+import java.time.LocalDate
 
 class Appointment(val doctorId: Int,
-                  val date: Date) {
+                  val date: LocalDate) {
     /**
      * Function to override toString function
      */
