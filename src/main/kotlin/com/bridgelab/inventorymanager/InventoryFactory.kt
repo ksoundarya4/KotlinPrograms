@@ -6,6 +6,4 @@ data class Item(val Name: String?,
 
 data class InventoryFactory(val rice: List<Item>?,
                      val wheat: List<Item>?,
-                     val pulses: List<Item>?) {
-
- }
+                     val pulses: List<Item>?)
