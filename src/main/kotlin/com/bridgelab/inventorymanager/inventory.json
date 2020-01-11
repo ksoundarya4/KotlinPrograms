@@ -1,5 +1,5 @@
 {
-  "Rice": [
+  "rice": [
     {
       "Name": "Brown",
       "Weight": 3,
@@ -16,7 +16,7 @@
       "Price": 50
     }
   ],
-  "Wheat": [
+  "wheat": [
     {
       "Name": "Sharbati",
       "Weight": 2,
@@ -38,7 +38,7 @@
       "Price": 60
     }
   ],
-  "Pulses": [
+  "pulses": [
     {
       "Name": "toor dal",
       "Weight": 50,
