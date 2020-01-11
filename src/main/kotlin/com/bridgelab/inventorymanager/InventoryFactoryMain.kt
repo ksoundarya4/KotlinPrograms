@@ -11,5 +11,7 @@ fun main() {
     val file = File(fileName)
 
     val inventory  : InventoryFactory = objectMapper.readValue(src = file)
-    println(inventory)
+
+    val jsonString = objectMapper.writeValueAsString(inventory)
+    println(jsonString)
 }
