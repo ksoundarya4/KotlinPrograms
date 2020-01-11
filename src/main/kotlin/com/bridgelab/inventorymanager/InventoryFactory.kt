@@ -12,7 +12,7 @@ data class Pulses(val Name: String?,
                   val Weight: Int?,
                   val Price: Int?)
 
-data class Inventory(val rice: List<Rice>?,
+data class InventoryFactory(val rice: List<Rice>?,
                      val wheat: List<Wheat>?,
                      val pulses: List<Pulses>?) {
 
