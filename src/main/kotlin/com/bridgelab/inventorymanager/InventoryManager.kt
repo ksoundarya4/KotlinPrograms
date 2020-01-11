@@ -14,27 +14,30 @@ class InventoryManager {
     val inventory: InventoryFactory = objectMapper.readValue(src = file)
 
 
-    fun calculateRicePrice() {
+    fun calculateRicePrice(): String {
+        var riceJSONString: String = ""
         for (index in 0.until(inventory.rice!!.size)) {
             val totalPrice = inventory.rice[index].Weight!!.times(inventory.rice[index].Price!!)
-            println("${inventory.rice[index].Name} rice = $totalPrice")
+            riceJSONString += objectMapper.writeValueAsString("inventory.rice[index].Name} rice = $totalPrice")
         }
-        println()
+        return riceJSONString
     }
 
-    fun calculateWheatPrice() {
+    fun calculateWheatPrice(): String {
+        var wheatJSONString: String = ""
         for (index in 0.until(inventory.wheat!!.size)) {
             val totalPrice = inventory.wheat[index].Weight!!.times(inventory.wheat[index].Price!!)
-            println("${inventory.wheat[index].Name} wheat = $totalPrice")
+            wheatJSONString += objectMapper.writeValueAsString("${inventory.wheat[index].Name} wheat = $totalPrice")
         }
-        println()
+        return wheatJSONString
     }
 
-    fun calculatePulsesPrice() {
+    fun calculatePulsesPrice(): String {
+        var pulseJSONString = ""
         for (index in 0.until(inventory.pulses!!.size)) {
             val totalPrice = inventory.pulses[index].Weight!!.times(inventory.pulses[index].Price!!)
-            println("${inventory.pulses[index].Name} = $totalPrice")
+            pulseJSONString += objectMapper.writeValueAsString("${inventory.pulses[index].Name} = $totalPrice")
         }
-        println()
+        return pulseJSONString
     }
 }
