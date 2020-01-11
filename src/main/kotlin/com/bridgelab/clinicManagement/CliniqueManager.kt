@@ -1,9 +1,15 @@
 package com.bridgelab.clinicManagement
 
+import java.time.LocalDate
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
+
 class CliniqueManager {
 
     val doctorList = ArrayList<Doctor>()
     val patientList = ArrayList<Patient>()
+    val search = Search()
+    var appointmentMap = HashMap<Appointment,Int>()
 
     fun addDoctor() {
         println("Enter doctor name")
@@ -38,4 +44,65 @@ class CliniqueManager {
         val patient = Patient(patientName, patientID, mobileNumber, patientAge)
         patientList.add(patient)
     }
+
+    fun printDoctors(){
+        println("List Of Doctors")
+        println(doctorList)
+    }
+
+    fun printPatients(){
+        println("List Of Patients")
+        println(patientList)
+    }
+
+    fun takeAppointment(){
+         println("Enter doctor id")
+        val doctorId = readLine()!!.toInt()
+        val doctor : Doctor? = search.searchDoctorById(doctorId)
+
+        if(doctor != null){
+           println("Enter date of Appointment")
+            val dateString : String = readLine()!!.toString()
+            val date = LocalDate.parse(dateString)
+
+            if(date == null){
+                println("Date format is not valid")
+            } else{
+                val appointment = Appointment(doctorId, date)
+
+                if(appointmentMap.containsKey(appointment))
+                {
+                    var numberOfAppoinments = appointmentMap.get(appointment)
+
+                    if(numberOfAppoinments!! < 5){
+                        numberOfAppoinments++
+                        appointmentMap.put(appointment,numberOfAppoinments)
+                        println("Appointment Scheduled on ${date.toString()} with doctor $doctor")
+                    }else{
+                        println("Please select some other date")
+                    }
+                }else{
+                    appointmentMap.put(appointment,1)
+                }
+            }
+        } else {
+            println("Enter valid doctor id")
+        }
+    }
+
+    fun Search() {
+
+        println("Enter 1 to search doctor by name")
+        println("Enter 2 to search doctor by doctorId")
+        println("Enter 3 to search doctor by specialization")
+        println("Enter 4 to search doctor by availability")
+        println("Enter 5 to search patient by name")
+        println("Enter 6 to search patient by patientId")
+        println("Enter 7 to search patient by mobile")
+
+        when(readLine()!!.toInt()){
+            1 -> search.se
+        }
+}
+
 }
