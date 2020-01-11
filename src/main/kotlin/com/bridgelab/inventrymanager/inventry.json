@@ -1,0 +1,58 @@
+{
+  "Rice": [
+    {
+      "Name": "Brown",
+      "Weight": 3,
+      "Price": 120
+    },
+    {
+      "Name": "Basmathi",
+      "Weight": 2,
+      "Price": 100
+    },
+    {
+      "Name": "white",
+      "Weight": 3,
+      "Price": 50
+    }
+  ],
+  "Wheat": [
+    {
+      "Name": "Sharbati",
+      "Weight": 2,
+      "Price": 34
+    },
+    {
+      "Name": "lokmaniya",
+      "Weight": 5,
+      "Price": 23
+    },
+    {
+      "Name": "1 4 7 ",
+      "Weight": 4,
+      "Price": 56
+    },
+    {
+      "Name": "Chandrosi",
+      "Weight": 5,
+      "Price": 60
+    }
+  ],
+  "Pulses": [
+    {
+      "Name": "toor dal",
+      "Weight": 50,
+      "Price": 120
+    },
+    {
+      "Name": "chana dal",
+      "Weight": 10,
+      "Price": 100
+    },
+    {
+      "Name": "moong dal",
+      "Weight": 4,
+      "Price": 150
+    }
+  ]
+}
