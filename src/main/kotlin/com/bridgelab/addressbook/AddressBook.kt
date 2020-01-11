@@ -156,6 +156,6 @@ class AddressBook() {
      */
     fun printAll() {
         for (index in 0.until(persons.size))
-            println(persons.get(index))
+            println(persons[index])
     }
 }
