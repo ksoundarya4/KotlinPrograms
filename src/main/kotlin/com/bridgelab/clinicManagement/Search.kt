@@ -6,56 +6,53 @@ class Search {
     val doctorList = clinique.doctorList
     val patientList = clinique.patientList
 
-    fun searchDoctorByName(doctorName: String): Boolean {
+    fun searchDoctorByName(doctorName: String): Doctor? {
         for (doctor in doctorList) {
-            if (doctorName == doctor.name) return true
+            if (doctorName == doctor.name) return doctor
         }
-        return false
+        return null
     }
 
-    fun searchDoctorByID(doctorID: Int): Boolean {
+    fun searchDoctorByID(doctorID: Int): Doctor? {
         for (doctor in doctorList) {
-            if (doctorID == doctor.doctorID) return true
+            if (doctorID == doctor.doctorID) return doctor
         }
-        return false
+        return null
     }
 
-    fun searchDoctorBySpecialization(specialization: String): Boolean {
+    fun searchDoctorBySpecialization(specialization: String): Doctor? {
         for (doctor in doctorList) {
-            if (specialization == doctor.specialization) return true
+            if (specialization == doctor.specialization) return doctor
         }
-        return false
+        return null
     }
 
-    fun searchDoctorByAvailability(availability: String): Boolean {
+    fun searchDoctorByAvailability(availability: String): Doctor? {
         for (doctor in doctorList) {
-            if (availability == doctor.availability) return true
+            if (availability == doctor.availability) return doctor
         }
-        return false
+        return null
     }
 
-    fun searchPatientByName(patientName : String) : Boolean{
-        for(patient in patientList){
-            if(patientName == patient.name) return true
+    fun searchPatientByName(patientName: String): Patient? {
+        for (patient in patientList) {
+            if (patientName == patient.name) return patient
         }
-        return false
+        return null
     }
 
-    fun searchPatientByID(patientID : Int) : Boolean{
-        for(patient in patientList){
-            if(patientID == patient.patientID) return true
+    fun searchPatientByID(patientID: Int): Patient? {
+        for (patient in patientList) {
+            if (patientID == patient.patientID) return patient
         }
-        return false
+        return null
     }
 
-    fun searchPatientByMobileNumber(mobileNumber: String) : Boolean{
-        for(patient in patientList){
-            if(mobileNumber == patient.mobileNumber) return true
+    fun searchPatientByMobileNumber(mobileNumber: String): Patient? {
+        for (patient in patientList) {
+            if (mobileNumber == patient.mobileNumber) return patient
         }
-        return false
+        return null
     }
 
-    fun findSearch(choice : Int){
-
-    }
 }
