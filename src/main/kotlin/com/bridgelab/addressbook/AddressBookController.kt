@@ -8,84 +8,83 @@
  */
 package com.bridgelab.addressbook
 
+import java.io.File
+
 class AddressBookController {
 
     val fileSystem = FileSystem()
     var addressBook = AddressBook()
 
-    /**
-     * Function to controller Address Book
-     */
-    fun addressBookController() {
+    fun addEntry() {
+        addressBook = fileSystem.readFile(addressBook.file)
+        println("Enter number of people to add")
+        val numberOfPeople = readLine()!!.toInt()
+        for (index in 0.until(numberOfPeople))
+            addressBook.addPerson()
+        fileSystem.saveFile(addressBook, addressBook.file)
+    }
 
-        println("Enter the following choice to perform")
-        println("Enter choice 1 to add person to address Book")
-        println("Enter choice 2 to remove person from address Book")
-        println("Enter choice 3 to update address book")
-        println("Enter choice 4 to view any persons full name")
-        println("Enter choice 5 to know number of people in address Book")
-        println("Enter choice 6 to print address book")
-        println("Enter choice 7 to sort addressbook")
+    fun removeEntry() {
+        addressBook = fileSystem.readFile(addressBook.file)
+        println("Enter person index to be removed")
+        val index = readLine()!!.toInt()
+        addressBook.removePerson(index)
+        fileSystem.saveFile(addressBook, addressBook.file)
+    }
 
-        val choice = readLine()!!.toInt()
+    fun updateEntry() {
+        addressBook = fileSystem.readFile(addressBook.file)
+        println("Enter person index to be updated ")
+        val index = readLine()!!.toInt()
+        addressBook.updatePerson(index)
+        fileSystem.saveFile(addressBook, addressBook.file)
+    }
 
-        when (choice) {
-            1 -> {
-                addressBook = fileSystem.readFile(addressBook.file)
-                println("Enter number of people to add")
-                val numberOfPeople = readLine()!!.toInt()
-                for (index in 0.until(numberOfPeople))
-                    addressBook.addPerson()
-                fileSystem.saveFile(addressBook, addressBook.file)
-            }
-            2 -> {
-                addressBook = fileSystem.readFile(addressBook.file)
-                println("Enter person index to be removed")
-                val index = readLine()!!.toInt()
-                addressBook.removePerson(index)
-                fileSystem.saveFile(addressBook, addressBook.file)
-            }
-            3 -> {
-                addressBook = fileSystem.readFile(addressBook.file)
-                println("Enter person index to be updated ")
-                val index = readLine()!!.toInt()
-                addressBook.updatePerson(index)
-                fileSystem.saveFile(addressBook, addressBook.file)
-            }
-            4 -> {
-                addressBook = fileSystem.readFile(addressBook.file)
-                println("Enter person index to read his full name ")
-                val index = readLine()!!.toInt()
-                addressBook.getFullNameOfPerson(index)
-            }
-            5 -> {
-                addressBook = fileSystem.readFile(addressBook.file)
-                println(addressBook.persons.size)
-            }
+    fun viewFullName() {
+        addressBook = fileSystem.readFile(addressBook.file)
+        println("Enter person index to read his full name ")
+        val index = readLine()!!.toInt()
+        addressBook.getFullNameOfPerson(index)
+    }
 
-            6 -> {
-                addressBook = fileSystem.readFile(addressBook.file)
-                println("Adress Book")
-                addressBook.printAll()
-            }
-             7 -> {
-                 println("Enter 1 to sort by name, 2 to sort by zipCode")
-                 val input = readLine()!!.toInt()
-                 if (input == 1) {
-                     addressBook = fileSystem.readFile(addressBook.file)
-                     addressBook.sortByName()
-                     fileSystem.saveFile(addressBook, addressBook.file)
-                 }
-                 if (input == 2) {
-                     addressBook = fileSystem.readFile(addressBook.file)
-                     addressBook.sortByZip()
-                     fileSystem.saveFile(addressBook, addressBook.file)
-                 }
-             }
-            else -> {
-                println("Invalid Choice ")
-            }
+    fun numberOfPeople() {
+        addressBook = fileSystem.readFile(addressBook.file)
+        println(addressBook.persons.size)
+    }
+
+    fun printAddressBook() {
+        addressBook = fileSystem.readFile(addressBook.file)
+        println("Address Book")
+        println("____________________________")
+        addressBook.printAll()
+        println("____________________________")
+    }
+
+    fun sortAddressBook() {
+        println("Enter 1 to sort by name, 2 to sort by zipCode")
+        val input = readLine()!!.toInt()
+        if (input == 1) {
+            addressBook = fileSystem.readFile(addressBook.file)
+            addressBook.sortByName()
+            fileSystem.saveFile(addressBook, addressBook.file)
+        }
+        if (input == 2) {
+            addressBook = fileSystem.readFile(addressBook.file)
+            addressBook.sortByZip()
+            fileSystem.saveFile(addressBook, addressBook.file)
         }
     }
+
+    fun createNewAddressBook() {
+        println("Enter the file path")
+        val fileName = readLine()!!.toString()
+        val file = File(fileName)
+        println("Enter number of people to add")
+        val numberOfPeople = readLine()!!.toInt()
+        for (index in 0.until(numberOfPeople))
+            addressBook.addPerson()
+        fileSystem.saveFile(addressBook, file)
+    }
+
 }
 
