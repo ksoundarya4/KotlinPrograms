@@ -1,3 +1,11 @@
+/**
+ * Object Oriented Program
+ * @purpose To perform clinique management
+ * @file CliniqueManagerApplication
+ * @author ksoundarya4
+ * @version 1.0
+ * @since 12/01/2020
+ */
 package com.bridgelab.clinicManagement
 
 import kotlin.system.exitProcess
