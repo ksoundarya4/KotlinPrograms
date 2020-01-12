@@ -1,10 +1,8 @@
 package com.bridgelab.clinicManagement
 
-class Search {
+class Search( val doctorList : ArrayList<Doctor>,
+              val patientList : ArrayList<Patient> ) {
 
-    val clinique = CliniqueManager()
-    val doctorList = clinique.doctorList
-    val patientList = clinique.patientList
 
     fun searchDoctorByName(doctorName: String): Doctor? {
         for (doctor in doctorList) {
