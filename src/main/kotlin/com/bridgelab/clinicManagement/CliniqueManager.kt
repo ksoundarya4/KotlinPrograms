@@ -66,7 +66,7 @@ class CliniqueManager {
             println("Enter date of Appointment")
 
             val dateString: String = readLine()!!.toString()
-                val formatter = DateTimeFormatter.ofPattern("dd/mm/yyyy")
+                val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
                 val date = LocalDate.parse(dateString, formatter)
 
             if (date == null) {
@@ -95,7 +95,7 @@ class CliniqueManager {
 
     fun printAppointment(){
         println("Printing Appointment")
-        appointmentMap.putAll(appointmentMap)
+   //     appointmentMap.putAll(appointmentMap)
         println(appointmentMap)
     }
 
