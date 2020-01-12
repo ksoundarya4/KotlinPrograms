@@ -6,16 +6,16 @@ import java.io.File
 
 class InventoryManager {
 
-    val objectMapper = jacksonObjectMapper()
+    private val objectMapper = jacksonObjectMapper()
 
-    val fileName = "/home/user/IdeaProjects/KotlinPrograms/src/main/kotlin/com/bridgelab/inventorymanager/inventory.json"
+    private val fileName = "/home/user/IdeaProjects/KotlinPrograms/src/main/kotlin/com/bridgelab/inventorymanager/inventory.json"
     val file = File(fileName)
 
-    val inventory: InventoryFactory = objectMapper.readValue(src = file)
+    private val inventory: InventoryFactory = objectMapper.readValue(src = file)
 
 
     fun calculateRicePrice(): String {
-        var riceJSONString: String = ""
+        var riceJSONString = ""
         for (index in 0.until(inventory.rice!!.size)) {
             val totalPrice = inventory.rice[index].Weight!!.times(inventory.rice[index].Price!!)
             riceJSONString += objectMapper.writeValueAsString("${inventory.rice[index].Name} rice = $totalPrice")
@@ -24,7 +24,7 @@ class InventoryManager {
     }
 
     fun calculateWheatPrice(): String {
-        var wheatJSONString: String = ""
+        var wheatJSONString = ""
         for (index in 0.until(inventory.wheat!!.size)) {
             val totalPrice = inventory.wheat[index].Weight!!.times(inventory.wheat[index].Price!!)
             wheatJSONString += objectMapper.writeValueAsString("${inventory.wheat[index].Name} wheat = $totalPrice")
