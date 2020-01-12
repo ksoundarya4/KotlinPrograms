@@ -29,6 +29,9 @@ class CliniqueManager {
     private val search = Search(doctorList, patientList)
     private var appointmentMap = HashMap<Appointment, Int>()
 
+    /**
+     * Function to add doctor's to doctorList
+     */
     fun addDoctor() {
         println("Enter doctor name")
         val doctorName = readLine()!!.toString()
@@ -46,6 +49,9 @@ class CliniqueManager {
         doctorList.add(doctor)
     }
 
+    /**
+     * Function to add patient's to patientList
+     */
     fun addPatient() {
         println("Enter patient name")
         val patientName = readLine()!!.toString()
@@ -63,16 +69,26 @@ class CliniqueManager {
         patientList.add(patient)
     }
 
+    /**
+     * Function to print doctor's list
+     */
     fun printDoctors() {
         println("List Of Doctors")
         println(doctorList)
     }
 
+    /**
+     * Function to print patient's list
+     */
     fun printPatients() {
         println("List Of Patients")
         println(patientList)
     }
 
+    /**
+     * Function to take appointment from doctor
+     * based on date and doctor id
+     */
     fun takeAppointment() {
         println("Enter doctor id")
         val doctorId = readLine()!!.toInt()
@@ -110,12 +126,19 @@ class CliniqueManager {
         }
     }
 
+    /**
+     * Function to print doctor appointments
+     */
     fun printAppointment(){
         println("Printing Appointment")
    //     appointmentMap.putAll(appointmentMap)
         println(appointmentMap)
     }
 
+    /**
+     * Function to search doctor or a patient
+     * based on their attributes.
+     */
     fun find() {
 
         println("Enter 1 to search doctor by name")
