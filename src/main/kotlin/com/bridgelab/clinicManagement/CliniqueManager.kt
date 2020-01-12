@@ -8,7 +8,7 @@ class CliniqueManager {
 
     val doctorList = ArrayList<Doctor>()
     val patientList = ArrayList<Patient>()
-    val search = Search()
+    val search = Search(doctorList,patientList)
     var appointmentMap = HashMap<Appointment,Int>()
 
     fun addDoctor() {
@@ -58,7 +58,7 @@ class CliniqueManager {
     fun takeAppointment(){
          println("Enter doctor id")
         val doctorId = readLine()!!.toInt()
-        val doctor : Doctor? = search.searchDoctorById(doctorId)
+        val doctor : Doctor? = search.searchDoctorByID(doctorId)
 
         if(doctor != null){
            println("Enter date of Appointment")
@@ -101,7 +101,27 @@ class CliniqueManager {
         println("Enter 7 to search patient by mobile")
 
         when(readLine()!!.toInt()){
-            1 -> search.se
+            1 -> {println("Enter doctor name to search")
+                println(search.searchDoctorByName(readLine()!!.toString()))
+            }
+            2 -> {println("Enter doctor id to search")
+                println(search.searchDoctorByID(readLine()!!.toInt()))
+            }
+            3 -> {println("Enter doctor specialization to search")
+                println(search.searchDoctorBySpecialization(readLine()!!.toString()))
+            }
+            4 -> {println("Enter doctor availability to search")
+            println(search.searchDoctorByAvailability(readLine()!!.toString()))
+            }
+            5 -> {println("Enter patient name to search")
+            println(search.searchPatientByName(readLine()!!.toString()))
+            }
+            6 -> {println("Enter patient id to search")
+            println(search.searchPatientByID(readLine()!!.toInt()))
+            }
+            7 -> {println("Enter patient mobile number to search")
+            println(search.searchPatientByMobileNumber(readLine()!!.toString()))
+            }
         }
 }
 
