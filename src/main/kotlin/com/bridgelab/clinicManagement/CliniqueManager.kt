@@ -6,10 +6,10 @@ import kotlin.collections.HashMap
 
 class CliniqueManager {
 
-    val doctorList = ArrayList<Doctor>()
-    val patientList = ArrayList<Patient>()
-    val search = Search(doctorList, patientList)
-    var appointmentMap = HashMap<Appointment, Int>()
+    private val doctorList = ArrayList<Doctor>()
+    private val patientList = ArrayList<Patient>()
+    private val search = Search(doctorList, patientList)
+    private var appointmentMap = HashMap<Appointment, Int>()
 
     fun addDoctor() {
         println("Enter doctor name")
@@ -71,7 +71,7 @@ class CliniqueManager {
                 val appointment = Appointment(doctorId, date)
 
                 if (appointmentMap.containsKey(appointment)) {
-                    var numberOfAppoinments = appointmentMap.get(appointment)
+                    var numberOfAppoinments = appointmentMap[appointment]
 
                     if (numberOfAppoinments!! < 5) {
                         numberOfAppoinments++
@@ -95,7 +95,7 @@ class CliniqueManager {
         println(appointmentMap)
     }
 
-    fun Search() {
+    fun find() {
 
         println("Enter 1 to search doctor by name")
         println("Enter 2 to search doctor by doctorId")
