@@ -8,8 +8,8 @@ class CliniqueManager {
 
     val doctorList = ArrayList<Doctor>()
     val patientList = ArrayList<Patient>()
-    val search = Search(doctorList,patientList)
-    var appointmentMap = HashMap<Appointment,Int>()
+    val search = Search(doctorList, patientList)
+    var appointmentMap = HashMap<Appointment, Int>()
 
     fun addDoctor() {
         println("Enter doctor name")
@@ -45,44 +45,43 @@ class CliniqueManager {
         patientList.add(patient)
     }
 
-    fun printDoctors(){
+    fun printDoctors() {
         println("List Of Doctors")
         println(doctorList)
     }
 
-    fun printPatients(){
+    fun printPatients() {
         println("List Of Patients")
         println(patientList)
     }
 
-    fun takeAppointment(){
-         println("Enter doctor id")
+    fun takeAppointment() {
+        println("Enter doctor id")
         val doctorId = readLine()!!.toInt()
-        val doctor : Doctor? = search.searchDoctorByID(doctorId)
+        val doctor: Doctor? = search.searchDoctorByID(doctorId)
 
-        if(doctor != null){
-           println("Enter date of Appointment")
-            val dateString : String = readLine()!!.toString()
+        if (doctor != null) {
+            println("Enter date of Appointment")
+            val dateString: String = readLine()!!.toString()
             val date = LocalDate.parse(dateString)
 
-            if(date == null){
+            if (date == null) {
                 println("Date format is not valid")
-            } else{
+            } else {
                 val appointment = Appointment(doctorId, date)
 
-                if(appointmentMap.containsKey(appointment))
-                {
+                if (appointmentMap.containsKey(appointment)) {
                     var numberOfAppoinments = appointmentMap.get(appointment)
 
-                    if(numberOfAppoinments!! < 5){
+                    if (numberOfAppoinments!! < 5) {
                         numberOfAppoinments++
-                        appointmentMap.put(appointment,numberOfAppoinments)
+                        appointmentMap.put(appointment, numberOfAppoinments)
                         println("Appointment Scheduled on ${date.toString()} with doctor $doctor")
-                    }else{
+                    } else {
                         println("Please select some other date")
                     }
-                }else{
-                    appointmentMap.put(appointment,1)
+                } else {
+                    appointmentMap.put(appointment, 1)
                 }
             }
         } else {
@@ -100,29 +99,36 @@ class CliniqueManager {
         println("Enter 6 to search patient by patientId")
         println("Enter 7 to search patient by mobile")
 
-        when(readLine()!!.toInt()){
-            1 -> {println("Enter doctor name to search")
+        when (readLine()!!.toInt()) {
+            1 -> {
+                println("Enter doctor name to search")
                 println(search.searchDoctorByName(readLine()!!.toString()))
             }
-            2 -> {println("Enter doctor id to search")
+            2 -> {
+                println("Enter doctor id to search")
                 println(search.searchDoctorByID(readLine()!!.toInt()))
             }
-            3 -> {println("Enter doctor specialization to search")
+            3 -> {
+                println("Enter doctor specialization to search")
                 println(search.searchDoctorBySpecialization(readLine()!!.toString()))
             }
-            4 -> {println("Enter doctor availability to search")
-            println(search.searchDoctorByAvailability(readLine()!!.toString()))
+            4 -> {
+                println("Enter doctor availability to search")
+                println(search.searchDoctorByAvailability(readLine()!!.toString()))
             }
-            5 -> {println("Enter patient name to search")
-            println(search.searchPatientByName(readLine()!!.toString()))
+            5 -> {
+                println("Enter patient name to search")
+                println(search.searchPatientByName(readLine()!!.toString()))
             }
-            6 -> {println("Enter patient id to search")
-            println(search.searchPatientByID(readLine()!!.toInt()))
+            6 -> {
+                println("Enter patient id to search")
+                println(search.searchPatientByID(readLine()!!.toInt()))
             }
-            7 -> {println("Enter patient mobile number to search")
-            println(search.searchPatientByMobileNumber(readLine()!!.toString()))
+            7 -> {
+                println("Enter patient mobile number to search")
+                println(search.searchPatientByMobileNumber(readLine()!!.toString()))
             }
         }
-}
+    }
 
 }
