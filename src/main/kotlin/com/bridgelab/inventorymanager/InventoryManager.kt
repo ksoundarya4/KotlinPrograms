@@ -1,3 +1,14 @@
+/**
+ * Object Oriented Program
+ * @description The Inventory Manager will use InventoryFactory
+ * to create Inventory Object from JSON. The InventoryManager will
+ * call each Inventory Object in its list to calculate the Inventory
+ * Price and then call the Inventory Object to return the JSON String.
+ * @file InventoryManager.kt
+ * @author ksoundarya4
+ * @version 1.0
+ * @since 11/01/2020
+ */
 package com.bridgelab.inventorymanager
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
@@ -13,7 +24,9 @@ class InventoryManager {
 
     private val inventory: InventoryFactory = objectMapper.readValue(src = file)
 
-
+    /**
+     * Function to calculate price of each rice type.
+     */
     fun calculateRicePrice(): String {
         var riceJSONString = ""
         for (index in 0.until(inventory.rice!!.size)) {
@@ -23,6 +36,9 @@ class InventoryManager {
         return riceJSONString
     }
 
+    /**
+     * Function to calculate price of each wheat type.
+     */
     fun calculateWheatPrice(): String {
         var wheatJSONString = ""
         for (index in 0.until(inventory.wheat!!.size)) {
@@ -32,6 +48,9 @@ class InventoryManager {
         return wheatJSONString
     }
 
+    /**
+     * Function to calculate price of each pulse type.
+     */
     fun calculatePulsesPrice(): String {
         var pulseJSONString = ""
         for (index in 0.until(inventory.pulses!!.size)) {
