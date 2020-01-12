@@ -89,6 +89,12 @@ class CliniqueManager {
         }
     }
 
+    fun printAppointment(){
+        println("Printing Appointment")
+        appointmentMap.putAll(appointmentMap)
+        println(appointmentMap)
+    }
+
     fun Search() {
 
         println("Enter 1 to search doctor by name")
