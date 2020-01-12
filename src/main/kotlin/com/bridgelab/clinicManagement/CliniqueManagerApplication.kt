@@ -25,7 +25,7 @@ fun main() {
             4 -> cliniqueManager.printPatients()
             5 -> cliniqueManager.takeAppointment()
             6 -> cliniqueManager.printAppointment()
-            7 -> cliniqueManager.search
+            7 -> cliniqueManager.find()
             8 -> System.exit(0)
             else -> println("Invalid choice")
         }
