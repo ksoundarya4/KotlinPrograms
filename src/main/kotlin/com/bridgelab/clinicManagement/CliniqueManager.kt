@@ -1,6 +1,7 @@
 package com.bridgelab.clinicManagement
 
 import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
@@ -61,9 +62,12 @@ class CliniqueManager {
         val doctor: Doctor? = search.searchDoctorByID(doctorId)
 
         if (doctor != null) {
+
             println("Enter date of Appointment")
+
             val dateString: String = readLine()!!.toString()
-            val date = LocalDate.parse(dateString)
+                val formatter = DateTimeFormatter.ofPattern("dd/mm/yyyy")
+                val date = LocalDate.parse(dateString, formatter)
 
             if (date == null) {
                 println("Date format is not valid")
