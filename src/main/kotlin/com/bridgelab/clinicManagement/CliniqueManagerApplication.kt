@@ -1,7 +1,10 @@
 package com.bridgelab.clinicManagement
+
+import kotlin.system.exitProcess
+
 fun main() {
     val cliniqueManager = CliniqueManager()
-
+try {
     do {
         println("---------------Clinique Management System----------------")
         println()
@@ -26,8 +29,11 @@ fun main() {
             5 -> cliniqueManager.takeAppointment()
             6 -> cliniqueManager.printAppointment()
             7 -> cliniqueManager.find()
-            8 -> System.exit(0)
+            8 -> exitProcess(0)
             else -> println("Invalid choice")
         }
-    }while(choice < 9)
+    } while (choice < 9)
+}catch (exception : Exception){
+    exception.stackTrace
+}
 }
