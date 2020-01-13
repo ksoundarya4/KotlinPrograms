@@ -1,3 +1,12 @@
+/**
+ * Object Oriented Program
+ * @description CompanyShares object which has Stock Symbol
+ * and Number of Shares as well as DateTime of the transaction.
+ * @file CompanyShare.kt
+ * @author ksoundarya4
+ * @version 1.0
+ * @since 13/01/2020
+ */
 package com.bridgelab.stock
 
 import java.time.LocalDateTime
