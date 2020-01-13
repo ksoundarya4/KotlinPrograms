@@ -3,6 +3,11 @@ fun main(){
     val deckOfCards =DeckOfCards()
     deckOfCards.initialize()
     deckOfCards.shuffle()
-    deckOfCards.distribute()
-    println(deckOfCards.listOfCards)
+ val player =  deckOfCards.distribute()
+     for(index in 0.until(player.size)){
+         println("Player ${index+1}")
+         println(player[index])
+     }
+
+
 }
