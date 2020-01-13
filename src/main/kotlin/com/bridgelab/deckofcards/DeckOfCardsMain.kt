@@ -1,13 +1,8 @@
 package com.bridgelab.deckofcards
-
-fun main() {
-
-    val deckOfCards = DeckOfCards()
-    println(deckOfCards.listOfCards)
+fun main(){
+    val deckOfCards =DeckOfCards()
     deckOfCards.initialize()
-    println(deckOfCards.listOfCards)
-    println(deckOfCards.listOfCards.size)
     deckOfCards.shuffle()
-    println(deckOfCards.listOfCards)
     deckOfCards.distribute()
+    println(deckOfCards.listOfCards)
 }
