@@ -17,4 +17,5 @@ data class Card(val suit: String, val rank: String) {
     override fun hashCode(): Int {
         return {this.rank+this.suit}.hashCode()
     }
+
 }
