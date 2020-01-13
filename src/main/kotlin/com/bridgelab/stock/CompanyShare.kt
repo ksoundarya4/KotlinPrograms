@@ -15,6 +15,9 @@ data class CompanyShare(val stockSymbol: String,
                         var numberOfShare: Int,
                         var dateOfTransaction: LocalDateTime) {
 
+    /**
+     *Function to override equals function.
+     */
     override fun equals(other: Any?): Boolean {
         if (other is CompanyShare) {
             if (other.stockSymbol == this.stockSymbol &&
@@ -24,11 +27,18 @@ data class CompanyShare(val stockSymbol: String,
         return false
     }
 
+    /**
+     *Function to override equals function.
+     */
     override fun hashCode(): Int {
-        return (stockSymbol+numberOfShare.toString()+dateOfTransaction.toString()).hashCode()
+        return (stockSymbol + numberOfShare.toString() + dateOfTransaction.toString()).hashCode()
     }
 
+    /**
+     *Function to override toString function.
+     * To print company share details
+     */
     override fun toString(): String {
-        return "$stockSymbol : $numberOfShare,$dateOfTransaction"
+        return "CompanyShare : $stockSymbol,$numberOfShare,$dateOfTransaction"
     }
 }
