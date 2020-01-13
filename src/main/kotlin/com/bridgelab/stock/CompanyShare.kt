@@ -13,6 +13,7 @@ import java.time.LocalDateTime
 
 data class CompanyShare(val stockSymbol: String,
                         var numberOfShare: Int,
+                        val sharePrice: Int,
                         var dateOfTransaction: LocalDateTime) {
 
     /**
@@ -22,6 +23,7 @@ data class CompanyShare(val stockSymbol: String,
         if (other is CompanyShare) {
             if (other.stockSymbol == this.stockSymbol &&
                     other.numberOfShare == this.numberOfShare &&
+                    other.sharePrice == this.sharePrice &&
                     other.dateOfTransaction == this.dateOfTransaction) return true
         }
         return false
@@ -31,7 +33,7 @@ data class CompanyShare(val stockSymbol: String,
      *Function to override equals function.
      */
     override fun hashCode(): Int {
-        return (stockSymbol + numberOfShare.toString() + dateOfTransaction.toString()).hashCode()
+        return (stockSymbol + numberOfShare.toString() +sharePrice.toString()+ dateOfTransaction.toString()).hashCode()
     }
 
     /**
@@ -39,6 +41,6 @@ data class CompanyShare(val stockSymbol: String,
      * To print company share details
      */
     override fun toString(): String {
-        return "CompanyShare : $stockSymbol,$numberOfShare,$dateOfTransaction"
+        return "CompanyShare : $stockSymbol,$numberOfShare,$sharePrice,$dateOfTransaction"
     }
 }
