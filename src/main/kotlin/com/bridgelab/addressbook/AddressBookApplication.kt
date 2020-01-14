@@ -149,5 +149,5 @@ fun main() {
             9 -> exitProcess(0)
             else -> println("Inavlid choice")
         }
-    } while (choice > 9)
+    } while (choice < 10)
 }
