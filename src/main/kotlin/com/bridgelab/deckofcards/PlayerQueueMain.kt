@@ -20,10 +20,9 @@ fun main() {
 
     val playerQueue = Queue<Player>()
 
-    for(player in players){
+    for (player in players) {
         player.sortBySuit()
         playerQueue.enequeue(player)
     }
-
     println(playerQueue)
 }
