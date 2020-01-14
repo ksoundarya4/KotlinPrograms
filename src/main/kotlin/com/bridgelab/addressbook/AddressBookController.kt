@@ -110,6 +110,5 @@ class AddressBookController {
             addressBook.addPerson()
         fileSystem.saveFile(addressBook, file)
     }
-
 }
 
