@@ -14,8 +14,12 @@ package com.bridgelab.deckofcards
 
 class DeckOfCards {
 
-    private val suite: Array<String> = arrayOf("Clubs", "Diamonds", "Hearts", "Spades")
-    private val rank: Array<String> = arrayOf("Ace", "King", "Queen", "jack", "2", "3", "4", "5", "6", "7", "8", "9", "10")
+    private val suite: Array<Suit> = arrayOf(Suit.CLUB, Suit.DIAMOND, Suit.HEART, Suit.SPADE)
+
+    private val rank: Array<Rank> = arrayOf(Rank.Ace, Rank.One, Rank.Two, Rank.Three, Rank.Four,
+            Rank.Five, Rank.Six, Rank.Seven, Rank.Eight, Rank.Nine, Rank.Ten, Rank.Jack, Rank.Queen,
+            Rank.King)
+
     private val numberOfCards = suite.size * rank.size
 
     var list = ArrayList<Card>()
