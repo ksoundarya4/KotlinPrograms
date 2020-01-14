@@ -3,7 +3,7 @@
  * @purpose Main function to initialize , shuffle
  * and distribute the deck of cards.
  * Print the cards of players
- * @file DeckOfCardsMain.kt
+ * @file CardGame.kt
  * @author ksoundarya4
  * @version 1.0
  * @since 13/01/2020
