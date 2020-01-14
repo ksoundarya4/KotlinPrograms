@@ -18,34 +18,30 @@ class AddressBookController {
     /**
      * Function to add people to Address Book
      */
-    fun addEntry() {
+    fun addEntry(person: Person) {
         addressBook = fileSystem.readFile(addressBook.file)
-        println("Enter number of people to add")
-        val numberOfPeople = readLine()!!.toInt()
-        for (index in 0.until(numberOfPeople))
-            addressBook.addPerson()
+        addressBook.addPerson(person)
         fileSystem.saveFile(addressBook, addressBook.file)
     }
 
     /**
      * Function to remove a person from Address Book
      */
-    fun removeEntry() {
+    fun removeEntry(person: Person) {
         addressBook = fileSystem.readFile(addressBook.file)
-        println("Enter person index to be removed")
-        val index = readLine()!!.toInt()
-        addressBook.removePerson(index)
+        addressBook.removePerson(person)
         fileSystem.saveFile(addressBook, addressBook.file)
     }
 
     /**
      * Function to update person info in Address Book
      */
-    fun updateEntry() {
+    fun updateEntry(person: Person) {
+
         addressBook = fileSystem.readFile(addressBook.file)
-        println("Enter person index to be updated ")
-        val index = readLine()!!.toInt()
-        addressBook.updatePerson(index)
+
+        addressBook.updatePerson(person)
+
         fileSystem.saveFile(addressBook, addressBook.file)
     }
 
@@ -53,9 +49,12 @@ class AddressBookController {
      *Function to get full name of person from Address Book
      */
     fun viewFullName() {
+
         addressBook = fileSystem.readFile(addressBook.file)
+
         println("Enter person index to read his full name ")
         val index = readLine()!!.toInt()
+
         addressBook.getFullNameOfPerson(index)
     }
 
@@ -63,6 +62,7 @@ class AddressBookController {
      *Function to know number of people in Address Book
      */
     fun numberOfPeople() {
+
         addressBook = fileSystem.readFile(addressBook.file)
         println(addressBook.persons.size)
     }
@@ -71,11 +71,15 @@ class AddressBookController {
      *Function to print Address Book
      */
     fun printAddressBook() {
+
         addressBook = fileSystem.readFile(addressBook.file)
+
         println("Address Book")
-        println("____________________________")
+        println("----------------------------")
+
         addressBook.printAll()
-        println("____________________________")
+
+        println("----------------------------")
     }
 
     /**
@@ -83,14 +87,19 @@ class AddressBookController {
      * person name or on zip code
      */
     fun sortAddressBook() {
+
         println("Enter 1 to sort by name, 2 to sort by zipCode")
         val input = readLine()!!.toInt()
+
         if (input == 1) {
+
             addressBook = fileSystem.readFile(addressBook.file)
             addressBook.sortByName()
             fileSystem.saveFile(addressBook, addressBook.file)
         }
+
         if (input == 2) {
+
             addressBook = fileSystem.readFile(addressBook.file)
             addressBook.sortByZip()
             fileSystem.saveFile(addressBook, addressBook.file)
@@ -100,14 +109,14 @@ class AddressBookController {
     /**
      * Function to create new Address Book
      */
-    fun createNewAddressBook() {
+    fun createNewAddressBook(person: Person) {
+
         println("Enter the file path")
         val fileName = readLine()!!.toString()
         val file = File(fileName)
-        println("Enter number of people to add")
-        val numberOfPeople = readLine()!!.toInt()
-        for (index in 0.until(numberOfPeople))
-            addressBook.addPerson()
+
+        addressBook.addPerson(person)
+
         fileSystem.saveFile(addressBook, file)
     }
 }
