@@ -108,11 +108,10 @@ class CliniqueManager {
                 val appointment = Appointment(doctorId, date)
 
                 if (appointmentMap.containsKey(appointment)) {
-                    var numberOfAppointments = appointmentMap[appointment]
+                    var numberOfAppointments = appointmentMap.getValue(appointment)
 
-                    if (numberOfAppointments!! < 5) {
-                        numberOfAppointments++
-                        appointmentMap[appointment] = numberOfAppointments
+                    if (numberOfAppointments < 5) {
+                        appointmentMap[appointment] = ++numberOfAppointments
                         println("Appointment Scheduled on $date with doctor $doctor")
                     } else {
                         println("Please select some other date")
