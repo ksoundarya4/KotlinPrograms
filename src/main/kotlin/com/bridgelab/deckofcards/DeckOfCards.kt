@@ -52,9 +52,9 @@ class DeckOfCards {
      *
      * @return ArrayList of Players
      */
-    fun distribute(): ArrayList<Player> {
+    fun distribute(NumberOfPlayers : Int): ArrayList<Player> {
         val players = ArrayList<Player>()
-        for (indexI in 0.until(4)) {
+        for (indexI in 0.until(NumberOfPlayers)) {
             val player = Player()
             for (indexJ in 0.until(9)) {
                 player.PlayerCards.add(list[indexI + indexJ * 4])
