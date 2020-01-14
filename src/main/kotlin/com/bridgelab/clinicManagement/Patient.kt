@@ -41,6 +41,6 @@ data class Patient(val name: String,
      * Function to override hashCode function
      */
     override fun hashCode(): Int {
-        return {patientID.toString()+name+mobileNumber+age.toString()}.hashCode()
+        return { patientID.toString() + name + mobileNumber + age.toString() }.hashCode()
     }
 }
