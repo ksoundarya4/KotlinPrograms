@@ -99,8 +99,8 @@ class CliniqueManager {
             println("Enter date of Appointment")
 
             val dateString: String = readLine()!!.toString()
-                val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
-                val date = LocalDate.parse(dateString, formatter)
+            val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+            val date = LocalDate.parse(dateString, formatter)
 
             if (date == null) {
                 println("Date format is not valid")
@@ -128,9 +128,9 @@ class CliniqueManager {
     /**
      * Function to print doctor appointments
      */
-    fun printAppointment(){
+    fun printAppointment() {
         println("Printing Appointment")
-   //     appointmentMap.putAll(appointmentMap)
+        //     appointmentMap.putAll(appointmentMap)
         println(appointmentMap)
     }
 
