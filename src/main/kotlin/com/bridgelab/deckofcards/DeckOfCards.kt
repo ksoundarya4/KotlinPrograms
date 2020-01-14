@@ -57,7 +57,7 @@ class DeckOfCards {
         for (indexI in 0.until(4)) {
             val player = Player()
             for (indexJ in 0.until(9)) {
-                player.listOfPlayerCards.add(list[indexI + indexJ * 4])
+                player.PlayerCards.add(list[indexI + indexJ * 4])
             }
             players.add(player)
         }
