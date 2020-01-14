@@ -44,7 +44,6 @@ class Doctor(val name: String,
      * Function to override hahCode function
      */
     override fun hashCode(): Int {
-        return {name+doctorID.toString()+specialization+availability}.hashCode()
+        return { name + doctorID.toString() + specialization + availability }.hashCode()
     }
-
 }
