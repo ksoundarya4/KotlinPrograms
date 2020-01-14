@@ -8,7 +8,7 @@
  */
 package com.bridgelab.deckofcards
 
-data class Card(val suit: String, val rank: String) {
+data class Card(val suit: Suit, val rank: Rank) {
 
     /**
      * Function to override toString function
@@ -33,7 +33,9 @@ data class Card(val suit: String, val rank: String) {
      * Function to override hashCode function
      */
     override fun hashCode(): Int {
-        return {this.rank+this.suit}.hashCode()
+        var result = suit.hashCode()
+        result = 31 * result + rank.hashCode()
+        return result
     }
-
 }
+
