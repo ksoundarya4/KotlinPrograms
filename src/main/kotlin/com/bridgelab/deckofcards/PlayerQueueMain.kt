@@ -16,7 +16,11 @@ fun main() {
     val deckOfCards = DeckOfCards()
     deckOfCards.initialize()
     deckOfCards.shuffle()
-    val players = deckOfCards.distribute()
+
+    println("Enter the number of players")
+    val numberOfPlayers = readLine()!!.toInt()
+
+    val players = deckOfCards.distribute(numberOfPlayers)
 
     val playerQueue = Queue<Player>()
 
