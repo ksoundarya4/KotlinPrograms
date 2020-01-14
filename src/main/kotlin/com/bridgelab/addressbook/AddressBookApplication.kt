@@ -33,5 +33,4 @@ fun main() {
         8 -> controller.createNewAddressBook()
         else -> println("Inavlid choice")
     }
-
 }
