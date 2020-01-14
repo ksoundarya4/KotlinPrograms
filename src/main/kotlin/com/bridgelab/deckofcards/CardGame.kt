@@ -15,7 +15,11 @@ fun main() {
     val deckOfCards = DeckOfCards()
     deckOfCards.initialize()
     deckOfCards.shuffle()
-    val player = deckOfCards.distribute()
+
+    println("Enter the number of players")
+    val numberOfPlayers = readLine()!!.toInt()
+
+    val player = deckOfCards.distribute(numberOfPlayers)
     for (index in 0.until(player.size)) {
         println("Player ${index + 1}")
         println(player[index])
