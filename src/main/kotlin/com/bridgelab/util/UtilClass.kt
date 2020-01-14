@@ -6,6 +6,8 @@
  * @version 1.0
  * @since 03/01/2020
  */
+@file:Suppress("NAME_SHADOWING")
+
 package com.bridgelabs.util
 
 import java.io.File
@@ -201,7 +203,7 @@ fun isLeapYear(year: Int): Boolean {
  * @return{int} 0 for Sunday, 1 for Monday, 2 for Tuesday, and so forth.
  */
 fun day(date: Int, month: Int, year: Int): Int {
-    var year: Int = year - (14 - month) / 12
+    val year = year - (14 - month) / 12
     val x: Int = year + year / 4 - year / 100 + year / 400
     val month = month + 12 * ((14 - month) / 12) - 2
 
