@@ -7,10 +7,7 @@
  * @version 1.0
  * @since 02/01/2020
  */
-package com.bridgelabs.stock
-
-import com.bridgelabs.util.Node
-import com.bridgelabs.util.OutOfSizeException
+package com.bridgelabs.util
 
 /**
  *To create UnorderedLinkedList class which has head node ,
