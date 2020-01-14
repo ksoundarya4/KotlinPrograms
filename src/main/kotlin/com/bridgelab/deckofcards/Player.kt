@@ -9,23 +9,23 @@
 package com.bridgelab.deckofcards
 
 class Player {
-    var listOfPlayerCards = ArrayList<Card>()
+    var PlayerCards = ArrayList<Card>()
+
     /**
      * Function to override toString function
      * To print list Of  Player Cards
      */
     override fun toString(): String {
-        return listOfPlayerCards.toString()
+        return PlayerCards.toString()
     }
 
     /**
      * Function to sort list of player cards based on suit.
      */
     fun sortBySuit() {
-      listOfPlayerCards.sortBy { it.suit }
-        }
-
+        PlayerCards.sortBy { it.suit }
     }
+}
 
 
 
