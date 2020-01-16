@@ -1,0 +1,4 @@
+package designpatters
+
+class FactoryMethod {
+}
