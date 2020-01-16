@@ -1,4 +1,4 @@
-package designpatterns.factory
+package designpatterns
 
 import org.junit.Test
 import org.assertj.core.api.Assertions.assertThat
