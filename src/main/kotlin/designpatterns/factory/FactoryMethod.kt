@@ -5,11 +5,7 @@ class USA : Country
 class Greece : Country
 class India : Country
 
-class Currency(val code : String){
-    override fun toString(): String {
-        return code
-    }
-}
+class Currency(val code : String)
 
 
 object CurrencyFactory {
