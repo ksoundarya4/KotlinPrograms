@@ -1,4 +1,4 @@
-package designpatters
+package designpatters.factory
 
 interface Country
 class USA : Country
@@ -19,7 +19,7 @@ object CurrencyFactory {
             is USA -> Currency("USD")
             is Greece -> Currency("EUR")
             is India -> Currency("INR")
-            else ->  Currency("None")
+            else -> Currency("None")
         }
 }
 
