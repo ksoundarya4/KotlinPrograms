@@ -1,4 +1,4 @@
-package designpatters.factory
+package designpatterns.factory
 
 interface Country
 class USA : Country
