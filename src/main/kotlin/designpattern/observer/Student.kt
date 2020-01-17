@@ -8,9 +8,23 @@
  */
 package designpattern.observer
 
+/**
+ * Student interface
+ */
 interface Student {
 
+    /**
+     * @param observer that has to be registered
+     */
     fun registerObserver(observer : Observer)
+
+    /**
+     * @param observer that has to be removed
+     */
     fun removeObserver(observer : Observer)
+
+    /**
+     * Function to notify the observer.
+     */
     fun notifyObserver()
 }
