@@ -17,6 +17,6 @@ class Person(val name : String) : Observer {
      * Function that override update function
      */
     override fun update(availability: String) {
-        println("Hello $name, is $availability in store")
+        println("Hello $name, product is $availability in store")
     }
 }
