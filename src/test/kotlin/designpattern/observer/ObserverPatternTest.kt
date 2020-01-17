@@ -1,6 +1,6 @@
 /**
  * Design Pattern
- * @purpose To test Factory design pattern
+ * @purpose To test observer design pattern
  * @file ObserverPatternTest.kt
  * @author ksoundarya4
  * @version 1.0
