@@ -8,7 +8,14 @@
  */
 package designpattern.observer
 
+/**
+ * Observer interface
+ */
 interface Observer {
-
+    /**
+     * update Function
+     *
+     * @param availability of product
+     */
     fun update(availability : String)
 }
