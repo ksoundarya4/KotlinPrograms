@@ -10,7 +10,7 @@ package designpattern.delegate
 
 import org.junit.Test
 
-class DelegateTest() {
+class DelegateTest{
 
     @Test
     fun delegate(){
