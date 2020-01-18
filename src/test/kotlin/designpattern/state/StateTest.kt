@@ -1,3 +1,11 @@
+/**
+ * Design Pattern
+ * @purpose To test state design pattern.
+ * @file StateTest.kt
+ * @author ksoundarya4
+ * @version 1.0
+ * @since 18/01/2020
+ */
 package designpattern.state
 
 import org.assertj.core.api.Assertions.assertThat
