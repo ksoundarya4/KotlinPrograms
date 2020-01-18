@@ -1,3 +1,11 @@
+/**
+ * Design Pattern
+ * @purpose To implement state design pattern.
+ * @file AuthorizationPresenter.kt
+ * @author ksoundarya4
+ * @version 1.0
+ * @since 18/01/2020
+ */
 package designpattern.state
 
 class AuthorizationPresenter {
