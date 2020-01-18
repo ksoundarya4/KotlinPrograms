@@ -1,6 +1,6 @@
 /**
  * Design Pattern
- * @purpose to implement prototype design pattern.
+ * @purpose To test prototype design pattern.
  * @file EmployeeTest.kt
  * @author ksoundarya4
  * @version 1.0
