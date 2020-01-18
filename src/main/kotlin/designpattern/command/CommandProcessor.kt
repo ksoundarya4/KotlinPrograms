@@ -18,7 +18,7 @@ class CommandProcessor {
     /**
      * Function to add order command to orders.
      */
-    fun addOrders(orderCommand : OrderCommand){
+    fun addOrders(orderCommand: OrderCommand) {
         orders.add(orderCommand)
     }
 
@@ -26,8 +26,8 @@ class CommandProcessor {
      * Function to execute order command
      * and clear orders.
      */
-    fun processOrders(){
-        for(orderCommand in orders)
+    fun processOrders() {
+        for (orderCommand in orders)
             orderCommand.execute()
         orders.clear()
     }
