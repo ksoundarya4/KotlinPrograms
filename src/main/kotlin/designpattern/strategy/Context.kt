@@ -11,7 +11,7 @@ package designpattern.strategy
 /**
  * Context class having strategy
  */
-class Context(val strategy: Strategy) {
+class Context(private val strategy: Strategy) {
 
     /**
      * Function that executes Strategy.
