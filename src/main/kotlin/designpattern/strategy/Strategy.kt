@@ -12,5 +12,5 @@ package designpattern.strategy
  * Strategy interface having doOperation method
  */
 interface Strategy {
-    fun doOperation(num1: Int, num2: Int)
+    fun doOperation(num1: Int, num2: Int) : Int
 }
