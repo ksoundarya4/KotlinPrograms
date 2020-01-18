@@ -12,8 +12,8 @@ package designpattern.prototype
  * Employee class having employee id,
  * name and designation implements Prototype.
  */
-class Employee(val id: Int,
-               val name: String,
+class Employee(var id: Int,
+               var name: String,
                val designation: String) : Prototype {
 
     /**
@@ -22,8 +22,7 @@ class Employee(val id: Int,
      * @return instance of Employee.
      */
     override fun clone(): Employee {
-        println(" Returning instance of employee")
-        return Employee(id,name,designation)
+        return Employee(id, name, designation)
     }
 
     /**
@@ -32,5 +31,21 @@ class Employee(val id: Int,
      */
     override fun toString(): String {
         return "Employee : $id,$name,$designation"
+    }
+
+    override fun hashCode(): Int {
+        return { id.toString() + name + designation }.hashCode()
+    }
+
+    /**
+     * Function to override equals()
+     */
+    override fun equals(other: Any?): Boolean {
+        if (other is Employee) {
+            if (other.id == this.id &&
+                    other.name == this.name &&
+                    other.designation == this.designation) return true
+        }
+        return false
     }
 }
