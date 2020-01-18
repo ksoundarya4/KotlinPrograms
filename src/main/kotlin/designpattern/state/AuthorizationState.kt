@@ -9,6 +9,6 @@
 package designpattern.state
 
 /**
- * AuthorizationState class
+ * AuthorizationState Interface
  */
-sealed class AuthorizationState
+interface AuthorizationState
