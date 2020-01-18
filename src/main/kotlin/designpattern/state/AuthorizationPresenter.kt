@@ -26,14 +26,27 @@ class AuthorizationPresenter {
             }
         }
 
+    /**
+     * Function to assign state when Authorized
+     * user login
+     *
+     * @param userName
+     */
     fun loginUser(userName: String) {
         state = Authorized(userName)
     }
 
+    /**
+     * Function to assign state with Unauthorized
+     * user logout
+     */
     fun logoutUser() {
         state = Unauthorized
     }
 
+    /**
+     * Function to override toString()
+     */
     override fun toString(): String {
         return "user $userName is logged in : $isAuthorized"
     }
