@@ -12,5 +12,5 @@ package designpattern.prototype
  * Prototype Interface having clone function.
  */
 interface Prototype {
-    fun clone()
+    fun clone() : Any
 }
