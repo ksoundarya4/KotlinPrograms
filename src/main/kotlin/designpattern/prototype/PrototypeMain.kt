@@ -11,7 +11,7 @@ package designpattern.prototype
 fun main() {
 
     val employee1 = Employee(1, "sound", "software developer")
-    var employee2 = employee1.clone()
+    val employee2 = employee1.clone()
 
     if(employee1 == employee2) {
         println(employee1)
