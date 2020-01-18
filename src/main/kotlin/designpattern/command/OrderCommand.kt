@@ -1,7 +1,7 @@
 /**
  * Design Pattern
  * @purpose To implement command design pattern.
- * @file ORderCommand.kt
+ * @file OrderCommand.kt
  * @author ksoundarya4
  * @version 1.0
  * @since 18/01
