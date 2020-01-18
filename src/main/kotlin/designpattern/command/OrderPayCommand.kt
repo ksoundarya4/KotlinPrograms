@@ -12,7 +12,7 @@ package designpattern.command
  * Class OrderPayCommand implements OrderCommand
  * having order id.
  */
-class OrderPayCommand(private val id : Int) : OrderCommand {
+class OrderPayCommand(private val id: Int) : OrderCommand {
 
     override fun execute() {
         println("Paying for order with id $id")
