@@ -11,7 +11,7 @@ package com.bridgelab.addressbook
 import java.io.File
 import java.lang.IndexOutOfBoundsException
 
-class AddressBook() {
+class AddressBook {
 
     var persons = ArrayList<Person>()
     var numberOfPerson = persons.size
