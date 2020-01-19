@@ -39,9 +39,7 @@ class AddressBookController {
     fun updateEntry(person: Person) {
 
         addressBook = fileSystem.readFile(addressBook.file)
-
         addressBook.updatePerson(person)
-
         fileSystem.saveFile(addressBook, addressBook.file)
     }
 

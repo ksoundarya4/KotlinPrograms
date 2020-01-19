@@ -16,7 +16,6 @@ class AddressBook() {
     var persons = ArrayList<Person>()
     var numberOfPerson = persons.size
     var file = File("/home/user/IdeaProjects/KotlinPrograms/src/main/kotlin/com/bridgelab/addressbook/addressBook.json")
-        private set
 
     /**
      * Function to add people to Address Book
