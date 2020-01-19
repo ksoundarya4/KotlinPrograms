@@ -14,6 +14,6 @@ fun main() {
     val jsonRicePrice = inventoryManager.calculateRicePrice()
     val jsonWheatPrice = inventoryManager.calculateWheatPrice()
     val jsonPulsePrice = inventoryManager.calculatePulsesPrice()
-    println(" { $jsonRicePrice $jsonWheatPrice $jsonPulsePrice }")
 
+    println(" { $jsonRicePrice $jsonWheatPrice $jsonPulsePrice }")
 }

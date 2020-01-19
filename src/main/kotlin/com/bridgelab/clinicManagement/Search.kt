@@ -9,8 +9,8 @@
  */
 package com.bridgelab.clinicManagement
 
-class Search(private val doctorList : ArrayList<Doctor>,
-             private val patientList : ArrayList<Patient> ) {
+class Search(private val doctorList: ArrayList<Doctor>,
+             private val patientList: ArrayList<Patient>) {
 
     /**
      * Function to search doctor by Name
@@ -102,5 +102,4 @@ class Search(private val doctorList : ArrayList<Doctor>,
         }
         return null
     }
-
 }

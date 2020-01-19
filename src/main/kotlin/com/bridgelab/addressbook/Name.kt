@@ -40,5 +40,4 @@ data class Name(
     override fun hashCode(): Int {
         return { this.firstName.hashCode() + this.lastName.hashCode() }.hashCode()
     }
-
 }

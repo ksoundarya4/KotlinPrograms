@@ -1,0 +1,18 @@
+{
+    "stockList" : [
+    {
+        "stockName" : "mahendra",
+        "numberOfShares" : 5,
+        "sharePrice" : 500
+    },
+    {
+        "stockName" : "tcs",
+        "numberOfShares" : 6,
+        "sharePrice" : 600
+    },
+    {
+    "stockName" : "wipro",
+    "numberOfShares" : 6,
+    "sharePrice" : 800
+}]
+}

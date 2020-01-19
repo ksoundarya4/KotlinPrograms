@@ -42,5 +42,4 @@ data class Person(var id : Int,
     override fun hashCode(): Int {
         return { name.hashCode() + address.hashCode() + phoneNumber.hashCode() }.hashCode()
     }
-
 }
