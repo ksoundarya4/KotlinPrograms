@@ -3,7 +3,7 @@ package com.bridgelab.stock
 import com.bridgelabs.util.LinkedList
 import java.io.PrintWriter
 
-class StockAccount(val customerName: String, var cashBalance: Double, var numberOfShares: Int) {
+class StockAccount(var cashBalance : Double , var numberOfShares: Int){
 
     val companyShareList = LinkedList<CompanyShare>()
 
@@ -56,10 +56,10 @@ class StockAccount(val customerName: String, var cashBalance: Double, var number
      * Function to save Stock Account into file
      */
     fun saveFile(fileName: String) {
-        val customerInfo = "name : ${this.customerName} , AccountBalance : ${this.cashBalance} , NumberOfShares : ${this.numberOfShares}"
+        val AccountInfo = "AccountBalance : ${this.cashBalance} , NumberOfShares : ${this.numberOfShares}"
 
         val writer = PrintWriter(fileName)
-        writer.append(customerInfo)
+        writer.append(AccountInfo)
         writer.close()
     }
 
@@ -70,8 +70,7 @@ class StockAccount(val customerName: String, var cashBalance: Double, var number
         println("--------------------")
         println("Stock Account details")
         println()
-        println("CustomerName : ${this.customerName}\n" +
-                "Account Balance : ${this.cashBalance}\n" +
+        println("Account Balance : ${this.cashBalance}\n" +
                 "NumberOfShares : ${this.numberOfShares}")
     }
 }
