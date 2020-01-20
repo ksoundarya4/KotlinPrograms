@@ -10,7 +10,7 @@ package designpattern.mvp.model
 
 import java.io.File
 
-class Students {
+abstract class Students : IModel{
     val students = ArrayList<Student>()
     val file  = File("/home/user/IdeaProjects/KotlinPrograms/src/main/kotlin/designpattern/mvp/model/student.json")
 
