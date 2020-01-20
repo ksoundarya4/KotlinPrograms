@@ -14,13 +14,13 @@ package designpattern.di
  */
 class Employee(val name: String) : InjectAddress {
 
-    private var address: Address? = null
+    var address: Address? = null
 
     /**
      * Function to override setAddress to
      * set employee address
      */
-    override fun setAddress(address: Address) {
+    override fun injectAddress(address: Address) {
         this.address = address
     }
 
