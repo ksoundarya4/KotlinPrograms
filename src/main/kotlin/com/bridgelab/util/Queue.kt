@@ -16,9 +16,9 @@ import com.bridgelabs.util.Node
  *tail node and queue size.
  */
 data class Queue<T>(
-    private var head: Node<T>? = null,
-    private var tail: Node<T>? = null,
-    var size: Int = 0
+        private var head: Node<T>? = null,
+        private var tail: Node<T>? = null,
+        var size: Int = 0
 ) {
     /**
      *Function that override toString()
@@ -81,5 +81,35 @@ data class Queue<T>(
     fun isEmpty(): Boolean {
         if (size == 0) return true
         return false
+    }
+
+    /**
+     * Function to dequeue the queue based on element
+     */
+    fun dequeue(data: T): Boolean {
+        var temp: Node<T>? = head
+        var previousTemp: Node<T>? = null
+
+        if (head == null) {
+            println("Queue is empty")
+        }
+
+        if (temp != null && temp.data!! == data) {
+            head = temp.next
+            size--
+            return true
+        }
+
+        while (temp != null && temp.data != data) {
+            previousTemp = temp
+            temp = temp.next
+        }
+
+        if (temp == null)
+            return false
+
+        previousTemp!!.next = temp.next
+        size--
+        return true
     }
 }
