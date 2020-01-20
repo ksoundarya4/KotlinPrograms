@@ -53,10 +53,12 @@ class StockAccount(var cashBalance : Double , var numberOfShares: Int){
             val companyShare = companyShareList.get(index)
 
             if (companyShare.stockSymbol == companySymbol) {
-                companyShare.numberOfShare += numberOfShares
-                val shareValue = numberOfShares.times(companyShare.sharePrice)
-                cashBalance += shareValue
-                this.numberOfShares -= numberOfShares
+                if (cashBalance > numberOfShares.times(companyShare.sharePrice)) {
+                    companyShare.numberOfShare += numberOfShares
+                    val shareValue = numberOfShares.times(companyShare.sharePrice)
+                    cashBalance += shareValue
+                    this.numberOfShares -= numberOfShares
+                } else println("Low account balance")
             }
         }
     }
