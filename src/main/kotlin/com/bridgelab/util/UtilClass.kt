@@ -14,8 +14,12 @@ import com.bridgelab.addressbook.Address
 import com.bridgelab.addressbook.AddressBook
 import com.bridgelab.addressbook.Name
 import com.bridgelab.addressbook.Person
+import com.bridgelab.stock.CompanyShare
 import java.io.File
 import java.io.PrintWriter
+import java.lang.Exception
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 object UtilClass {
 
@@ -324,5 +328,40 @@ object UtilClass {
             else -> println("Enter valid choice")
         }
         return person
+    }
+
+    fun getDate(dateString: String): LocalDate? {
+        try {
+            val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")
+            val date = LocalDate.parse(dateString, formatter)
+            return date
+        } catch (exception: Exception) {
+            println("Enter date and time in dd/MM/yyyy HH:mm:ss format")
+        }
+        return null
+    }
+
+    /**
+     * Function to get Company share details
+     */
+    fun readCompanyShare(): CompanyShare {
+        println("Enter Company Share details")
+
+        println("Enter company Symbol")
+        val companySymbol = readLine()!!.toString()
+
+        println("Enter number Of company Shares")
+        val numberOfShares = readLine()!!.toInt()
+
+        println("Enter value of each share")
+        val valueOfEachShare = readLine()!!.toInt()
+
+        println("Enter date of creation")
+        val dateString = readLine()!!.toString()
+        val date = getDate(dateString)
+        if (date == null) println("Enter correct format")
+
+        val companyShare = CompanyShare(companySymbol,numberOfShares,valueOfEachShare,date)
+        return companyShare
     }
 }
