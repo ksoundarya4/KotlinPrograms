@@ -8,12 +8,14 @@
  */
 package com.bridgelab.stock
 
+import com.bridgelabs.queue.Queue
 import com.bridgelabs.util.UtilClass
 import kotlin.system.exitProcess
 
 fun main() {
     val customer = UtilClass.readCustomerDetails()
     val manager = CustomerStockManager(customer)
+  //  val symbols = Queue<String>()
 
     do {
         println("Welcome to Customer Stock Account Application")
@@ -23,7 +25,8 @@ fun main() {
         println("Enter 3 to sell customer share")
         println("Enter 4 to print company list")
         println("Enter 5 to print customer details")
-        println("Enter 6 to exit")
+    //    println("Enter 6 to print customer symbol queue")
+        println("Enter 7 to exit")
         val choice = readLine()!!.toInt()
 
         when (choice) {
@@ -39,6 +42,7 @@ fun main() {
                 val companySymbol = readLine()!!.toString()
 
                 manager.buyShares(amount, companySymbol)
+            //    symbols.enequeue(companySymbol)
             }
             3 -> {
                 println("Enter number of shares to buy")
@@ -48,11 +52,13 @@ fun main() {
                 val companySymbol = readLine()!!.toString()
 
                 manager.sellShares(numberOfShare,companySymbol)
+            //    symbols.dequeue(companySymbol)
             }
             4 -> manager.printCompanyShares()
             5 -> manager.printCustomer()
-            6 -> exitProcess(0)
+        //    6 -> println(symbols)
+            7 -> exitProcess(0)
             else -> println("Enter valid choice")
         }
-    }while(choice < 7)
+    }while(choice < 8)
 }
