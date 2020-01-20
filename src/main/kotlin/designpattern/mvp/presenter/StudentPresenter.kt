@@ -5,15 +5,14 @@ import designpattern.mvp.model.Student
 import designpattern.mvp.view.IView
 import java.io.File
 
-class StudentPresenter(val view : IView,val model : IModel) : IPresenter{
+class StudentPresenter(val view: IView, val model: IModel) : IPresenter {
 
-    override fun addStudent(file : File,student: Student) {
-        model.saveStudent(file,student)
+    override fun addStudent(file: File, student: Student) {
+        model.addStudent(student)
     }
 
-    override fun deleteStudent(file: File,student: Student) {
-
-
+    override fun deleteStudent(file: File, student: Student) {
+        model.removeStudent(student)
     }
 
 }

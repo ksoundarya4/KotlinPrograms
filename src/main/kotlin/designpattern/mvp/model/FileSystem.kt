@@ -12,7 +12,7 @@ import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import java.io.File
 
-class FileSystem : IModel {
+abstract class FileSystem : IModel {
 
     val objectMapper = jacksonObjectMapper()
 
