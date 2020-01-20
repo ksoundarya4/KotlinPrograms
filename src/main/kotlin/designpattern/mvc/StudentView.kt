@@ -12,7 +12,7 @@ class StudentView {
     /**
      * Function to print student details.
      */
-    fun printStudentDetails(studentName : String,studentRollNumber : String){
+    fun printStudentDetails(studentName: String, studentRollNumber: String) {
         println("Student : ")
         println("Name : $studentName")
         println("RollNumber: $studentRollNumber")
