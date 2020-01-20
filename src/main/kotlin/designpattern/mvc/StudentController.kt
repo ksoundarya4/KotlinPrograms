@@ -8,13 +8,13 @@
  */
 package designpattern.mvc
 
-class StudentController(val model : Student , val view : StudentView) {
+class StudentController(val model: Student, val view: StudentView) {
 
     /**
      * Function to print updated student details
-     * after it is modified.s
+     * after it is modified.
      */
     fun updateView() {
-        view.printStudentDetails(model.name,model.roleNumber)
+        view.printStudentDetails(model.name, model.roleNumber)
     }
 }
