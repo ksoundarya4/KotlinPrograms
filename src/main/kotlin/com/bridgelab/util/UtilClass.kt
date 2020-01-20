@@ -15,6 +15,8 @@ import com.bridgelab.addressbook.AddressBook
 import com.bridgelab.addressbook.Name
 import com.bridgelab.addressbook.Person
 import com.bridgelab.stock.CompanyShare
+import com.bridgelab.stock.Customer
+import com.bridgelab.stock.StockAccount
 import java.io.File
 import java.io.PrintWriter
 import java.lang.Exception
@@ -361,7 +363,36 @@ object UtilClass {
         val date = getDate(dateString)
         if (date == null) println("Enter correct format")
 
-        val companyShare = CompanyShare(companySymbol,numberOfShares,valueOfEachShare,date)
+        val companyShare = CompanyShare(companySymbol, numberOfShares, valueOfEachShare, date)
         return companyShare
+    }
+
+    /**
+     * Function to read Customer details
+     */
+    fun readCustomerDetails(): Customer {
+        println("Enter Customer Details")
+        println("Enter Customer name")
+        val name = readLine()!!.toString()
+
+        println("Enter StockAccount details")
+        val stockAccount = readStockAccountDetails()
+
+        val customer = Customer(name,stockAccount)
+        return customer
+    }
+
+    /**
+     * Function to read StockAccount details
+     */
+    fun readStockAccountDetails(): StockAccount {
+        println("Enter AccountBalance")
+        val accountBalance = readLine()!!.toDouble()
+
+        println("Enter number of shares in Account")
+        val numberOfShares = readLine()!!.toInt()
+
+        val stockAccount = StockAccount(accountBalance,numberOfShares)
+        return stockAccount
     }
 }
