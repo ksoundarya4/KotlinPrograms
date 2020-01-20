@@ -1,3 +1,12 @@
+/**
+ * Object Oriented Programs
+ * @description StockAccount having list of company share
+ * and can perform buying amd selling of shares.
+ * @file StockAccount.kt
+ * @author ksoundarya4
+ * @version 1.0
+ * @since 18/01/2020
+ */
 package com.bridgelab.stock
 
 import com.bridgelabs.util.LinkedList
