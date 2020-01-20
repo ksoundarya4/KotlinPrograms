@@ -22,7 +22,7 @@ class FileSystem : IModel {
      * @param file to read from.
      * @return instance of Student
      */
-    override fun readStudent(file: File) : Student {
+    override fun readStudent(file: File) : Students {
         return objectMapper.readValue(file)
     }
 
@@ -32,8 +32,8 @@ class FileSystem : IModel {
      * @param file to write
      * @param student instance of Student
      */
-    override fun saveStudent(file: File, student: Student) {
-        objectMapper.writeValue(file,student)
+    override fun saveStudent(file: File, students: Student) {
+        objectMapper.writeValue(file,students)
     }
 
 //    override fun removeStudent(file: File) {
