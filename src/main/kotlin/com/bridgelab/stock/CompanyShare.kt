@@ -9,12 +9,12 @@
  */
 package com.bridgelab.stock
 
-import java.time.LocalDateTime
+import java.time.LocalDate
 
 data class CompanyShare(val stockSymbol: String,
                         var numberOfShare: Int,
                         val sharePrice: Int,
-                        var dateOfTransaction: LocalDateTime) {
+                        var dateOfTransaction: LocalDate?) {
 
     /**
      *Function to override equals function.
