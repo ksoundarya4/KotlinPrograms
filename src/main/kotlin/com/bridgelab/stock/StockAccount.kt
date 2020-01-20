@@ -8,7 +8,7 @@ class StockAccount(var cashBalance : Double , var numberOfShares: Int){
     val companyShareList = LinkedList<CompanyShare>()
 
     /**
-     * Function to retur total value of all shares.
+     * Function to return total value of all shares.
      */
     fun valueOf(): Double {
         return cashBalance
@@ -72,5 +72,31 @@ class StockAccount(var cashBalance : Double , var numberOfShares: Int){
         println()
         println("Account Balance : ${this.cashBalance}\n" +
                 "NumberOfShares : ${this.numberOfShares}")
+    }
+
+    /**
+     * Function to override equals function
+     */
+    override fun equals(other: Any?): Boolean {
+        if(other is StockAccount){
+            if(other.cashBalance == this.cashBalance &&
+                    other.numberOfShares == this.numberOfShares) return true
+        }
+        return false
+    }
+
+    /**
+     * Function to override toString function
+     * Print Stock Account details.
+     */
+    override fun toString(): String {
+        return "$cashBalance,$numberOfShares"
+    }
+
+    /**
+     * Function to override hashCode function.
+     */
+    override fun hashCode(): Int {
+        return {cashBalance.toString()+numberOfShares.toString()}.hashCode()
     }
 }
