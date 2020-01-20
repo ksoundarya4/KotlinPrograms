@@ -13,5 +13,5 @@ package designpattern.di
  * to required class.
  */
 interface InjectAddress {
-    fun setAddress(address: Address)
+    fun injectAddress(address: Address)
 }
