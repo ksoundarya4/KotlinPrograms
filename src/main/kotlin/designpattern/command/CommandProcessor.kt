@@ -13,7 +13,7 @@ package designpattern.command
  */
 class CommandProcessor {
 
-    private val orders = ArrayList<OrderCommand>()
+    val orders = ArrayList<OrderCommand>()
 
     /**
      * Function to add order command to orders.
