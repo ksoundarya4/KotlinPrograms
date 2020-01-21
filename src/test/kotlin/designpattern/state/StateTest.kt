@@ -27,7 +27,5 @@ class StateTest{
         println(authorizedPresenter)
         assertThat(authorizedPresenter.isAuthorized).isEqualTo(false)
         assertThat(authorizedPresenter.userName).isEqualTo("Unknown")
-
-
     }
 }
