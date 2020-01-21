@@ -15,18 +15,10 @@ import org.junit.jupiter.api.Test
 class SingletonTest {
 
     @Test
-    fun print() {
+    fun callSingleTonFunction_checkThem() {
         val expectedOutput = Singleton.print()
         val expectedOutput2 = Singleton.print()
         assertThat(expectedOutput).isSameAs(Singleton.print())
-        assertThat(expectedOutput2).isSameAs(Singleton.print())
-    }
-
-    @Test
-    fun dosomething() {
-        val expectedOutput = Singleton.dosomething()
-        val expectedOutput2 = Singleton.print()
-        assertThat(expectedOutput).isSameAs(Singleton.dosomething())
         assertThat(expectedOutput2).isSameAs(Singleton.print())
     }
 }
