@@ -11,6 +11,7 @@ package designpattern.proxy
 import org.junit.Test
 
 class ProxyTest{
+
     @Test
     fun proxy(){
         val securedFile = SecuredFile(NormalFile())
