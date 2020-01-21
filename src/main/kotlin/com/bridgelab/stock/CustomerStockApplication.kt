@@ -45,7 +45,7 @@ fun main() {
             //    symbols.enequeue(companySymbol)
             }
             3 -> {
-                println("Enter number of shares to buy")
+                println("Enter number of shares to sell")
                 val numberOfShare = readLine()!!.toInt()
 
                 println("CompanySymbol")
