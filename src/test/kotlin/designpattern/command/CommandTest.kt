@@ -9,11 +9,12 @@
 package designpattern.command
 
 import org.junit.Test
+import kotlin.test.assertEquals
 
 class CommandTest{
 
     @Test
-    fun command() {
+    fun createCommandProcessor_testOrderList() {
 
         val commandProcessor = CommandProcessor()
         commandProcessor.addOrders(OrderAddCommand(1))
@@ -21,5 +22,7 @@ class CommandTest{
         commandProcessor.addOrders(OrderPayCommand(2))
         commandProcessor.addOrders(OrderPayCommand(1))
         commandProcessor.processOrders()
+
+        assertEquals(commandProcessor.orders.size,0,"Test")
     }
 }
