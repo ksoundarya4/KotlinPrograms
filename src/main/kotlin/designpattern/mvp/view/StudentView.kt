@@ -1,17 +1,23 @@
+/**
+ * Design Pattern
+ * @purpose To implement MVP design pattern.
+ * @file StudentView.kt
+ * @author ksoundarya4
+ * @version 1.0
+ * @since 20/01/2020
+ */
 package designpattern.mvp.view
 
 import designpattern.mvp.model.Student
 import designpattern.mvp.presenter.IPresenter
 import java.io.File
 
-class StudentView(val presenter : IPresenter) : IView{
+abstract class StudentView(val presenter: IPresenter) : IView {
 
-    override fun onAddFailure(message: String) {
-        println(message)
-    }
-
+    /**
+     * Function to add student
+     */
     override fun onAddSuccess(message: String) {
-        println(message)
 
         println("Enter file name to add student")
         val fileName = readLine()!!.toString()
@@ -20,8 +26,27 @@ class StudentView(val presenter : IPresenter) : IView{
         println("Enter Student name\nStudent roll number")
         val name = readLine()!!.toString()
         val rollNumber = readLine()!!.toString()
+        val student = Student(name, rollNumber)
+
+        presenter.addStudent(file, student)
+
+    }
+
+    /**
+     * Function to delete Student
+     */
+    override fun onDeleteSuccess(message: String) {
+
+        println("Enter file name to delete student")
+        val fileName = readLine()!!.toString()
+        val file = File(fileName)
+
+        println("Enter Student name\nStudent roll number")
+        val name = readLine()!!.toString()
+        val rollNumber = readLine()!!.toString()
         val student = Student(name,rollNumber)
 
-        presenter.addStudent(presenter.addStudent(file,student))
+        presenter.deleteStudent(file,student)
+
     }
-    }
+}
