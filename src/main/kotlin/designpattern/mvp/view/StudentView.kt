@@ -8,11 +8,18 @@
  */
 package designpattern.mvp.view
 
+import designpattern.mvp.model.FileSystem
 import designpattern.mvp.model.Student
 import designpattern.mvp.presenter.IPresenter
+import designpattern.mvp.presenter.StudentPresenter
 import java.io.File
 
-abstract class StudentView(val presenter: IPresenter) : IView {
+class StudentView : IView {
+    var presenter : IPresenter? = null
+
+    override fun onAddFailure(message: String) {
+
+    }
 
     /**
      * Function to add student
@@ -28,7 +35,11 @@ abstract class StudentView(val presenter: IPresenter) : IView {
         val rollNumber = readLine()!!.toString()
         val student = Student(name, rollNumber)
 
-        presenter.addStudent(file, student)
+        presenter?.addStudent(file, student)
+
+    }
+
+    override fun onDeleteFailure(message: String) {
 
     }
 
@@ -46,7 +57,7 @@ abstract class StudentView(val presenter: IPresenter) : IView {
         val rollNumber = readLine()!!.toString()
         val student = Student(name,rollNumber)
 
-        presenter.deleteStudent(file,student)
+        presenter?.deleteStudent(file,student)
 
     }
 }
