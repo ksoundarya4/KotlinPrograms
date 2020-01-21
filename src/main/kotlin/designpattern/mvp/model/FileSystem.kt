@@ -12,7 +12,7 @@ import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import java.io.File
 
-abstract class FileSystem : IModel {
+class FileSystem : IModel {
 
     val objectMapper = jacksonObjectMapper()
 
@@ -22,7 +22,7 @@ abstract class FileSystem : IModel {
      * @param file to read from.
      * @return instance of Student
      */
-    override fun readStudent(file: File) : Students {
+    override fun readStudent(file: File) : Student {
         return objectMapper.readValue(file)
     }
 
@@ -32,8 +32,8 @@ abstract class FileSystem : IModel {
      * @param file to write
      * @param student instance of Student
      */
-    override fun saveStudent(file: File, students: Student) {
-        objectMapper.writeValue(file,students)
+    override fun saveStudent(file: File, student: Student) {
+        objectMapper.writeValue(file,student)
     }
 
 //    override fun removeStudent(file: File) {
