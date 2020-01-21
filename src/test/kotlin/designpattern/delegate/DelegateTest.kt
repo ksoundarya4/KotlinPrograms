@@ -17,6 +17,5 @@ class DelegateTest{
 
         val machine = Machine()
         machine.start()
-
     }
 }
